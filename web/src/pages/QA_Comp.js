@@ -3,14 +3,11 @@ import { NavLink, Link } from "react-router-dom";
 import Axios from "axios";
 import React, { Component } from "react";
 // import { Button } from "react-bootstrap";
-// eslint-disable-next-line no-unused-vars
-// import { useParams, useLocation, useNavigate } from "react-router-dom";
-
-// const submitTest = () => {
-//     Axios.get("http://localhost:8000/", {}).then(() => {
-//         console.log("성공");
-//     });
-// };
+const submitTest = () => {
+    Axios.get("http://localhost:8000/", {}).then(() => {
+        alert("등록 완료!");
+    });
+};
 
 // eslint-disable-next-line
 const Board = ({ id, title, registerId, registerDate }) => {
@@ -27,12 +24,82 @@ const Board = ({ id, title, registerId, registerDate }) => {
     );
 };
 
+// /**
+//  * BoardList class
+//  */
+// class BoardList extends Component {
+//     state = {
+//         boardList,
+//     };
+
+//     getList = () => {
+//         Axios.get("http://localhost:8000/list", {})
+//             .then((res) => {
+//                 const { data } = res;
+//                 this.setState({
+//                     boardList,
+//                 });
+//             })
+//             .catch((e) => {
+//                 console.error(e);
+//             });
+//     };
+
+//     /**
+//      */
+//     componentDidMount() {
+//         this.getList();
+//     }
+
+//     /**
+//      * @return {Component} Component
+//      */
+//     render() {
+//         // eslint-disable-next-line
+//         const { boardList } = this.state;
+
+//         return (
+//             <div>
+//                 <Table striped bordered hover>
+//                     <thead>
+//                         <tr>
+//                             <th>선택</th>
+//                             <th>번호</th>
+//                             <th>제목</th>
+//                             <th>작성자</th>
+//                             <th>작성일</th>
+//                         </tr>
+//                     </thead>
+//                     <tbody>
+//                         {
+//                             // eslint-disable-next-line
+//                             boardList.map((v) => {
+//                                 return (
+//                                     <Board
+//                                         id={v.BOARD_ID}
+//                                         title={v.BOARD_TITLE}
+//                                         registerId={v.REGISTER_ID}
+//                                         registerDate={v.REGISTER_DATE}
+//                                     />
+//                                 );
+//                             })}
+//                     </tbody>
+//                 </Table>
+//                 <Button variant="info">글쓰기</Button>
+//                 <Button variant="secondary">수정하기</Button>
+//                 <Button variant="danger">삭제하기</Button>
+//             </div>
+//         );
+//     }
+// }
+
 // export default BoardList;
 
 class QA extends Component {
     state = {
         boardList: [],
     };
+
     getList = () => {
         Axios.get("http://localhost:8000/list", {})
             .then((res) => {
@@ -49,11 +116,8 @@ class QA extends Component {
     componentDidMount() {
         this.getList();
     }
-
     render() {
         const { boardList } = this.state;
-        // const navigate = useNavigate();
-
         // const { result } = boardList.map((v) => {
         //     console.log(v);
         //     return v;
@@ -145,37 +209,37 @@ class QA extends Component {
                                     </div>
                                     <div />
                                 </div>
-                                <Link to={`/qa/${boardList?.[0]?.BOARD_ID}`} className={styles.group2}>
-                                    {/* <div className={styles.group2}> */}
-                                    <div className={styles.div3}>
-                                        <div className={styles.b}>{boardList?.[0]?.BOARD_ID}</div>
+                                <Link to={`/QA/${boardList?.[0]?.BOARD_ID}`}>
+                                    <div className={styles.group2}>
+                                        <div className={styles.div3}>
+                                            <div className={styles.b}>{boardList?.[1]?.BOARD_ID}</div>
+                                        </div>
+                                        <div className={styles.divide} />
+                                        <div className={styles.div3}>
+                                            <div className={styles.b}>{boardList?.[0]?.BOARD_ID}</div>
+                                        </div>
+                                        <div className={styles.divide} />
+                                        <div className={styles.div3}>
+                                            <div className={styles.b}>{boardList?.[1]?.BOARD_TITLE}</div>
+                                        </div>
+                                        <div className={styles.divide} />
+                                        <div className={styles.div3}>
+                                            <div className={styles.b}>Null</div>
+                                        </div>
+                                        <div className={styles.divide} />
+                                        <div className={styles.div3}>
+                                            <div className={styles.b}>{boardList?.[0]?.REGISTER_DATE}</div>
+                                        </div>
+                                        <div className={styles.divide} />
+                                        <div className={styles.div3}>
+                                            <div className={styles.b}>{boardList?.[0]?.UPDATER_ID}</div>
+                                        </div>
+                                        <div />
                                     </div>
-                                    <div className={styles.divide} />
-                                    <div className={styles.div3}>
-                                        <div className={styles.b}>{boardList?.[0]?.BOARD_ID}</div>
-                                    </div>
-                                    <div className={styles.divide} />
-                                    <div className={styles.div3}>
-                                        <div className={styles.b}>{boardList?.[0]?.BOARD_TITLE}</div>
-                                    </div>
-                                    <div className={styles.divide} />
-                                    <div className={styles.div3}>
-                                        <div className={styles.b}>Null</div>
-                                    </div>
-                                    <div className={styles.divide} />
-                                    <div className={styles.div3}>
-                                        <div className={styles.b}>{boardList?.[0]?.REGISTER_DATE}</div>
-                                    </div>
-                                    <div className={styles.divide} />
-                                    <div className={styles.div3}>
-                                        <div className={styles.b}>{boardList?.[0]?.UPDATER_ID}</div>
-                                    </div>
-                                    <div />
-                                    {/* </div> */}
                                 </Link>
                                 <div className={styles.group2}>
                                     <div className={styles.div3}>
-                                        <div className={styles.b}>{boardList?.[1]?.BOARD_ID}</div>
+                                        <div className={styles.b}>{boardList?.[0]?.BOARD_ID}</div>
                                     </div>
                                     <div className={styles.divide} />
                                     <div className={styles.div3}>
@@ -383,13 +447,15 @@ class QA extends Component {
                                 </div>
                             </div>
                         </div>
-                        <Link to="/write" className={styles.areaBtn}>
+                        <div className={styles.areaBtn}>
                             <div className={styles.compBtnDefualt}>
                                 <div className={styles.node}>
-                                    <b className={styles.text}>글 쓰기</b>
+                                    <b className={styles.text} onClick={submitTest}>
+                                        글 쓰기
+                                    </b>
                                 </div>
                             </div>
-                        </Link>
+                        </div>
                     </div>
                 </div>
             </div>
