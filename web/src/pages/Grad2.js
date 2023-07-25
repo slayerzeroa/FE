@@ -1,8 +1,63 @@
 import styles from "./Grad2.module.css";
 import { NavLink, Link } from "react-router-dom";
 import React from "react";
+import Chart from "react-apexcharts";
+import Select from "react-select";
+import Axios from "axios";
+import { useState, useEffect } from "react";
+
+const Majoroptions = [
+    { value: "금융공학과", label: "금융공학과" },
+    { value: "경영학과", label: "경영학과" },
+    { value: "E-비즈니스학과", label: "E-비즈니스학과" },
+];
+
+const Taskoptions = [
+    { value: "프론트오피스", label: "프론트오피스" },
+    { value: "미들오피스", label: "미들오피스" },
+    { value: "백오피스", label: "백오피스" },
+];
+
+const Companyoptions = [
+    { value: "증권사", label: "증권사" },
+    { value: "자산운용사", label: "자산운용사" },
+    { value: "은행", label: "은행" },
+];
+
+const customStyles = {
+    control: (provided) => ({
+        ...provided,
+        background: "var(--white-1)",
+        border: "1px solid var(--gray-1)",
+        borderRadius: "8px",
+        width: "100%",
+
+        "&:hover": {
+            border: "1px solid var(--gray-1)",
+        },
+    }),
+    option: (provided) => ({
+        ...provided,
+        color: "var(--text-10)",
+        background: "var(--white-1)",
+        "&:hover": {
+            background: "var(--gray-1)",
+        },
+    }),
+};
 
 const Grad2 = () => {
+    const [users, setUsers] = useState([]);
+    useEffect(() => {
+        Axios.get("http://localhost:8000/graduate", {})
+            .then((res) => {
+                setUsers(res);
+                console.log(res.data);
+            })
+            .catch((Error) => {
+                console.log(Error);
+            });
+    }, []);
     return (
         <div className={styles.div}>
             <div className={styles.bodyWrapper}>
@@ -11,27 +66,27 @@ const Grad2 = () => {
                         <b className={styles.title}>진로 검색</b>
                         <div className={styles.compDropdownC1}>
                             <div className={styles.title1}>전공</div>
-                            <div className={styles.compDropdownDefault}>
-                                <div className={styles.contents}>
-                                    <div className={styles.text}>Null</div>
-                                    <img className={styles.lcDropdownIcon} alt="" src="/lcdropdown2.svg" />
-                                </div>
-                            </div>
+                            <Select
+                                className={styles.compDropdownDefault}
+                                options={Majoroptions}
+                                styles={customStyles}
+                            />
                         </div>
                         <div className={styles.compDropdownC1}>
                             <div className={styles.title1}>직무</div>
-                            <div className={styles.compDropdownDefault}>
-                                <div className={styles.contents}>
-                                    <div className={styles.text}>Null</div>
-                                    <img className={styles.lcDropdownIcon} alt="" src="/lcdropdown2.svg" />
-                                </div>
-                            </div>
+                            <Select
+                                className={styles.compDropdownDefault}
+                                options={Taskoptions}
+                                styles={customStyles}
+                            />
                         </div>
                         <div className={styles.compInputDefualt}>
                             <div className={styles.title3}>기업</div>
-                            <div className={styles.input}>
-                                <div className={styles.text2}>입력</div>
-                            </div>
+                            <Select
+                                className={styles.compDropdownDefault}
+                                options={Companyoptions}
+                                styles={customStyles}
+                            />
                         </div>
                         <div className={styles.areaBtn}>
                             <div className={styles.compBtnDefualt}>
@@ -44,36 +99,18 @@ const Grad2 = () => {
                     </div>
                     <div className={styles.compParent}>
                         <div className={styles.comp}>
-                            <div className={styles.value}>
-                                <div className={styles.vectorParent}>
-                                    <img className={styles.frameChild} alt="" src="/vector-279.svg" />
-                                    <img className={styles.frameChild} alt="" src="/vector-279.svg" />
-                                    <img className={styles.frameChild} alt="" src="/vector-279.svg" />
-                                    <img className={styles.frameChild} alt="" src="/vector-279.svg" />
-                                    <img className={styles.frameChild} alt="" src="/vector-279.svg" />
-                                    <img className={styles.frameChild} alt="" src="/vector-279.svg" />
-                                    <img className={styles.frameChild} alt="" src="/vector-279.svg" />
-                                </div>
-                                <div className={styles.hParent}>
-                                    <div className={styles.h}>1H</div>
-                                    <div className={styles.h}>24H</div>
-                                    <div className={styles.h}>1W</div>
-                                    <div className={styles.m}>1M</div>
-                                    <div className={styles.h}>1Y</div>
-                                    <div className={styles.h}>ALL</div>
-                                </div>
-                                <div className={styles.jun8Parent}>
-                                    <div className={styles.h}>JUN 8</div>
-                                    <div className={styles.h}>JUN 15</div>
-                                    <div className={styles.h}>{`JUN 22 `}</div>
-                                    <div className={styles.h}>JUN 29</div>
-                                    <div className={styles.h}>{`JUL 6 `}</div>
-                                    <div className={styles.h}>JUL 13</div>
-                                </div>
-                                <div className={styles.valueChild} />
-                                <img className={styles.valueItem} alt="" src="/group-45.svg" />
-                                <div className={styles.rp11900204}>Rp 11,900,204</div>
-                                <div className={styles.currentValue}>Current Value</div>
+                            <div>
+                                <Chart
+                                    className={styles.value}
+                                    type="bar"
+                                    series={[
+                                        {
+                                            name: "series1",
+                                            data: users?.data?.map((user) => user.gpa),
+                                        },
+                                    ]}
+                                    options={{ chart: { height: 1200, width: 800 } }}
+                                ></Chart>
                             </div>
                         </div>
                         <div className={styles.comp1}>

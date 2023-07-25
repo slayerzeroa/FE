@@ -1,456 +1,456 @@
 .icon {
-  width: 40px;
-  height: 40px;
+    width: 40px;
+    height: 40px;
 }
 .adminA,
 .avatar,
 .icon {
-  position: relative;
+    position: relative;
 }
 .avatar {
-  border-radius: var(--br-5xs);
-  background-color: var(--stroke);
-  width: 40px;
-  height: 40px;
+    border-radius: var(--br-5xs);
+    background-color: var(--stroke);
+    width: 40px;
+    height: 40px;
 }
 .adminA {
-  font-weight: 500;
+    font-weight: 500;
 }
 .iconarrowDown {
-  position: relative;
-  width: 24px;
-  height: 24px;
+    position: relative;
+    width: 24px;
+    height: 24px;
 }
 .iconParent,
 .inner {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 .iconParent {
-  justify-content: center;
-  gap: var(--gap-mid);
+    justify-content: center;
+    gap: var(--gap-mid);
 }
 .inner {
-  position: absolute;
-  top: 0;
-  left: 270px;
-  background-color: var(--color-white);
-  width: 1650px;
-  height: 90px;
-  padding: 0 var(--padding-61xl);
-  box-sizing: border-box;
-  justify-content: flex-end;
+    position: absolute;
+    top: 0;
+    left: 270px;
+    background-color: var(--color-white);
+    width: 1650px;
+    height: 90px;
+    padding: 0 var(--padding-61xl);
+    box-sizing: border-box;
+    justify-content: flex-end;
 }
 .title,
 .title1 {
-  position: relative;
+    position: relative;
 }
 .title {
-  font-size: var(--font-size-5xl);
-  color: var(--text-main-text);
+    font-size: var(--font-size-5xl);
+    color: var(--text-main-text);
 }
 .title1 {
-  align-self: stretch;
-  letter-spacing: -0.02em;
+    align-self: stretch;
+    letter-spacing: -0.02em;
 }
 .lcDropdownIcon,
 .text {
-  position: relative;
-  flex-shrink: 0;
+    position: relative;
+    flex-shrink: 0;
 }
 .text {
-  font-weight: 300;
-  display: inline-block;
-  width: 151px;
+    font-weight: 300;
+    display: inline-block;
+    width: 151px;
 }
 .lcDropdownIcon {
-  width: 10px;
-  height: 10px;
-  overflow: hidden;
+    width: 10px;
+    height: 10px;
+    overflow: hidden;
 }
 .contents {
-  align-self: stretch;
-  display: flex;
-  flex-direction: row;
-  padding: 0 var(--padding-21xl);
-  align-items: center;
-  justify-content: space-between;
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    padding: 0 var(--padding-21xl);
+    align-items: center;
+    justify-content: space-between;
 }
 .compDropdownC1,
 .compDropdownDefault {
-  align-self: stretch;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .compDropdownDefault {
-  flex: 1;
-  border-radius: var(--br-9xs);
-  background-color: var(--color-white);
-  border: 1px solid var(--stroke);
-  padding: var(--padding-3xl) var(--padding-xl);
-  align-items: center;
-  font-size: var(--font-size-base);
-  color: var(--color-dimgray);
+    flex: 1;
+    border-radius: var(--br-9xs);
+    background-color: var(--color-white);
+    border: 1px solid var(--stroke);
+    padding: var(--padding-3xl) var(--padding-xl);
+    align-items: center;
+    font-size: var(--font-size-base);
+    color: var(--color-dimgray);
 }
 .compDropdownC1 {
-  align-items: flex-start;
-  gap: var(--gap-xs);
+    align-items: flex-start;
+    gap: var(--gap-xs);
 }
 .text2,
 .title3 {
-  position: relative;
+    position: relative;
 }
 .title3 {
-  align-self: stretch;
-  letter-spacing: -0.01em;
+    align-self: stretch;
+    letter-spacing: -0.01em;
 }
 .text2 {
-  font-weight: 300;
+    font-weight: 300;
 }
 .compInputDefualt,
 .input {
-  align-self: stretch;
-  display: flex;
+    align-self: stretch;
+    display: flex;
 }
 .input {
-  border-radius: var(--br-9xs);
-  background-color: var(--color-white);
-  border: 1px solid var(--stroke);
-  box-sizing: border-box;
-  height: 54px;
-  flex-direction: row;
-  padding: var(--padding-xl) var(--padding-11xl);
-  align-items: center;
-  justify-content: flex-start;
-  font-size: var(--font-size-base);
-  color: var(--color-dimgray);
+    border-radius: var(--br-9xs);
+    background-color: var(--color-white);
+    border: 1px solid var(--stroke);
+    box-sizing: border-box;
+    height: 54px;
+    flex-direction: row;
+    padding: var(--padding-xl) var(--padding-11xl);
+    align-items: center;
+    justify-content: flex-start;
+    font-size: var(--font-size-base);
+    color: var(--color-dimgray);
 }
 .compInputDefualt {
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  gap: var(--gap-mini);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: var(--gap-mini);
 }
 .icIcon,
 .text3 {
-  position: relative;
+    position: relative;
 }
 .icIcon {
-  width: 15.99px;
-  height: 16px;
+    width: 15.99px;
+    height: 16px;
 }
 .text3 {
-  letter-spacing: -0.01em;
+    letter-spacing: -0.01em;
 }
 .compBtnDefualt,
 .node {
-  border-radius: var(--br-9xs);
-  align-items: center;
-  justify-content: center;
+    border-radius: var(--br-9xs);
+    align-items: center;
+    justify-content: center;
 }
 .node {
-  align-self: stretch;
-  flex: 1;
-  background-color: var(--color-royalblue-200);
-  display: flex;
-  flex-direction: row;
-  padding: var(--padding-3xs) var(--padding-21xl);
-  gap: var(--gap-3xs);
+    align-self: stretch;
+    flex: 1;
+    background-color: var(--color-royalblue-200);
+    display: flex;
+    flex-direction: row;
+    padding: var(--padding-3xs) var(--padding-21xl);
+    gap: var(--gap-3xs);
 }
 .compBtnDefualt {
-  border: 1px solid var(--bg-soft-1);
-  box-sizing: border-box;
-  width: 391px;
-  height: 47px;
+    border: 1px solid var(--bg-soft-1);
+    box-sizing: border-box;
+    width: 391px;
+    height: 47px;
 }
 .areaBtn,
 .compBtnDefualt,
 .compInput {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 .areaBtn {
-  flex: 1;
-  align-items: center;
-  justify-content: flex-end;
-  text-align: center;
-  font-size: var(--font-size-xs);
-  color: var(--color-white);
+    flex: 1;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: center;
+    font-size: var(--font-size-xs);
+    color: var(--color-white);
 }
 .compInput {
-  align-self: stretch;
-  border-radius: var(--br-3xs);
-  background-color: var(--color-white);
-  border: 1px solid var(--stroke);
-  padding: var(--padding-41xl) var(--padding-21xl);
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: var(--gap-xl);
+    align-self: stretch;
+    border-radius: var(--br-3xs);
+    background-color: var(--color-white);
+    border: 1px solid var(--stroke);
+    padding: var(--padding-41xl) var(--padding-21xl);
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--gap-xl);
 }
 .frameChild {
-  position: relative;
-  width: 601px;
-  height: 1px;
+    position: relative;
+    width: 601px;
+    height: 1px;
 }
 .vectorParent {
-  position: absolute;
-  top: 108px;
-  left: 33px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: var(--gap-5xl);
+    position: absolute;
+    top: 108px;
+    left: 33px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--gap-5xl);
 }
 .h,
 .m {
-  position: relative;
-  letter-spacing: 0.03em;
-  line-height: 100%;
+    position: relative;
+    letter-spacing: 0.03em;
+    line-height: 100%;
 }
 .m {
-  font-weight: 600;
-  color: var(--color-dodgerblue-200);
+    font-weight: 600;
+    color: var(--color-dodgerblue-200);
 }
 .hParent,
 .jun8Parent {
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 .hParent {
-  top: 30px;
-  right: 24px;
-  gap: var(--gap-base);
-  text-align: right;
+    top: 30px;
+    right: 24px;
+    gap: var(--gap-base);
+    text-align: right;
 }
 .jun8Parent {
-  top: 292px;
-  left: 32px;
-  gap: var(--gap-43xl);
+    top: 292px;
+    left: 32px;
+    gap: var(--gap-43xl);
 }
 .valueChild {
-  position: absolute;
-  top: 278px;
-  left: 628px;
-  background-color: var(--color-aliceblue-100);
-  width: 2px;
-  height: 596px;
-  transform: rotate(90deg);
-  transform-origin: 0 0;
+    position: absolute;
+    top: 278px;
+    left: 628px;
+    background-color: var(--color-aliceblue-100);
+    width: 2px;
+    height: 596px;
+    transform: rotate(90deg);
+    transform-origin: 0 0;
 }
 .valueItem {
-  position: absolute;
-  top: 108px;
-  left: 31px;
-  width: 604px;
-  height: 140px;
+    position: absolute;
+    top: 108px;
+    left: 31px;
+    width: 604px;
+    height: 140px;
 }
 .currentValue,
 .rp11900204 {
-  position: absolute;
-  left: 32px;
-  letter-spacing: 0.03em;
-  line-height: 100%;
+    position: absolute;
+    left: 32px;
+    letter-spacing: 0.03em;
+    line-height: 100%;
 }
 .rp11900204 {
-  top: 56px;
-  font-size: var(--font-size-xl);
-  font-weight: 600;
-  color: var(--color-darkslateblue-100);
+    top: 56px;
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    color: var(--color-darkslateblue-100);
 }
 .currentValue {
-  top: 30px;
+    top: 30px;
 }
 .comp,
 .value {
-  background-color: var(--color-white);
-  overflow: hidden;
+    background-color: var(--color-white);
+    overflow: hidden;
 }
 .value {
-  position: relative;
-  border-radius: var(--br-base);
-  width: 658px;
-  height: 330px;
-  flex-shrink: 0;
+    position: relative;
+    border-radius: var(--br-base);
+    width: 1000px;
+    height: 330px;
+    flex-shrink: 0;
 }
 .comp {
-  align-self: stretch;
-  flex: 1;
-  border-radius: var(--br-3xs);
-  border: 1px solid var(--stroke);
-  display: flex;
-  flex-direction: row;
-  padding: var(--padding-3xs);
-  align-items: center;
-  justify-content: center;
+    align-self: stretch;
+    flex: 1;
+    border-radius: var(--br-3xs);
+    border: 1px solid var(--stroke);
+    display: flex;
+    flex-direction: row;
+    padding: var(--padding-3xs);
+    align-items: center;
+    justify-content: center;
 }
 .text4 {
-  position: relative;
-  opacity: 0.1;
+    position: relative;
+    opacity: 0.1;
 }
 .comp1,
 .compParent {
-  align-self: stretch;
-  display: flex;
+    align-self: stretch;
+    display: flex;
 }
 .comp1 {
-  border-radius: var(--br-3xs);
-  background-color: var(--color-aliceblue-200);
-  border: 1px solid var(--stroke);
-  box-sizing: border-box;
-  height: 183px;
-  overflow: hidden;
-  flex-shrink: 0;
-  flex-direction: row;
-  padding: var(--padding-3xs);
-  align-items: center;
-  justify-content: center;
-  font-size: var(--font-size-11xl);
-  color: var(--color-black);
-  font-family: var(--font-spoqa-han-sans-neo);
+    border-radius: var(--br-3xs);
+    background-color: var(--color-aliceblue-200);
+    border: 1px solid var(--stroke);
+    box-sizing: border-box;
+    height: 183px;
+    overflow: hidden;
+    flex-shrink: 0;
+    flex-direction: row;
+    padding: var(--padding-3xs);
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-11xl);
+    color: var(--color-black);
+    font-family: var(--font-spoqa-han-sans-neo);
 }
 .compParent {
-  flex: 1;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: var(--gap-41xl);
-  font-size: var(--font-size-sm);
-  color: var(--color-lightsteelblue-200);
-  font-family: var(--font-inter);
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--gap-41xl);
+    font-size: var(--font-size-sm);
+    color: var(--color-lightsteelblue-200);
+    font-family: var(--font-inter);
 }
 .body,
 .bodyWrapper {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 .body {
-  align-self: stretch;
-  flex: 1;
-  border-radius: var(--br-3xs);
-  background-color: var(--color-ghostwhite-100);
-  border: 1px solid var(--stroke);
-  flex-direction: row;
-  padding: var(--padding-11xl);
-  justify-content: flex-start;
-  gap: var(--gap-xl);
+    align-self: stretch;
+    flex: 1;
+    border-radius: var(--br-3xs);
+    background-color: var(--color-ghostwhite-100);
+    border: 1px solid var(--stroke);
+    flex-direction: row;
+    padding: var(--padding-11xl);
+    justify-content: flex-start;
+    gap: var(--gap-xl);
 }
 .bodyWrapper {
-  position: absolute;
-  top: 102px;
-  left: 0;
-  width: 1920px;
-  height: 978px;
-  flex-direction: column;
-  padding: var(--padding-61xl);
-  box-sizing: border-box;
-  justify-content: center;
-  font-size: var(--font-size-lg);
-  color: var(--key-black1);
-  font-family: var(--font-spoqa-han-sans-neo);
+    position: absolute;
+    top: 102px;
+    left: 0;
+    width: 1920px;
+    height: 978px;
+    flex-direction: column;
+    padding: var(--padding-61xl);
+    box-sizing: border-box;
+    justify-content: center;
+    font-size: var(--font-size-lg);
+    color: var(--key-black1);
+    font-family: var(--font-spoqa-han-sans-neo);
 }
 .icIcon1 {
-  position: relative;
-  width: 27.78px;
-  height: 26.81px;
+    position: relative;
+    width: 27.78px;
+    height: 26.81px;
 }
 .linkAjou {
-  position: relative;
-  letter-spacing: -0.05em;
-  font-weight: 900;
+    position: relative;
+    letter-spacing: -0.05em;
+    font-weight: 900;
 }
 .logo {
-  display: flex;
-  flex-direction: row;
-  padding: var(--padding-11xs) 0;
-  align-items: center;
-  justify-content: flex-start;
-  gap: var(--gap-3xs);
+    display: flex;
+    flex-direction: row;
+    padding: var(--padding-11xs) 0;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--gap-3xs);
 }
 .div1 {
-  position: relative;
-  letter-spacing: -1px;
-  font-weight: 500;
+    position: relative;
+    letter-spacing: -1px;
+    font-weight: 500;
 }
 .menu {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: var(--gap-3xs);
-  color: var(--color-royalblue-100);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--gap-3xs);
+    color: var(--color-royalblue-100);
 }
 .qa {
-  position: relative;
-  letter-spacing: -1px;
+    position: relative;
+    letter-spacing: -1px;
 }
 .icontransactionMinusParent {
-  display: flex;
-  flex-direction: row;
-  gap: var(--gap-3xs);
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap-3xs);
 }
 .icontransactionMinusParent,
 .menu2 {
-  align-items: center;
-  justify-content: flex-start;
+    align-items: center;
+    justify-content: flex-start;
 }
 .iconGroup,
 .menu2,
 .nav {
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 .nav {
-  flex: 1;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: var(--gap-11xl);
-  color: var(--text-10);
-  font-family: var(--font-spoqa-han-sans-neo);
+    flex: 1;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--gap-11xl);
+    color: var(--text-10);
+    font-family: var(--font-spoqa-han-sans-neo);
 }
 .iconGroup {
-  align-items: center;
-  justify-content: center;
-  gap: var(--gap-mid);
-  color: var(--text-100);
-  font-family: var(--font-dm-sans);
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-mid);
+    color: var(--text-100);
+    font-family: var(--font-dm-sans);
 }
 .div,
 .sidebar {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 .sidebar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: var(--color-ghostwhite-100);
-  border-bottom: 1px solid var(--color-royalblue-100);
-  width: 1920px;
-  height: 102px;
-  display: flex;
-  flex-direction: row;
-  padding: var(--padding-xl) var(--padding-21xl);
-  align-items: center;
-  justify-content: center;
-  gap: var(--gap-51xl);
-  color: var(--color-dodgerblue-100);
-  font-family: var(--font-roboto);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--color-ghostwhite-100);
+    border-bottom: 1px solid var(--color-royalblue-100);
+    width: 1920px;
+    height: 102px;
+    display: flex;
+    flex-direction: row;
+    padding: var(--padding-xl) var(--padding-21xl);
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-51xl);
+    color: var(--color-dodgerblue-100);
+    font-family: var(--font-roboto);
 }
 .div {
-  position: relative;
-  border-radius: var(--br-3xs);
-  background-color: var(--color-white);
-  border: 3px solid var(--color-cornflowerblue);
-  width: 100%;
-  height: 1086px;
-  overflow: hidden;
-  text-align: left;
-  font-size: var(--font-size-sm);
-  color: var(--text-100);
-  font-family: var(--font-dm-sans);
+    position: relative;
+    border-radius: var(--br-3xs);
+    background-color: var(--color-white);
+    border: 3px solid var(--color-cornflowerblue);
+    width: 100%;
+    height: 1086px;
+    overflow: hidden;
+    text-align: left;
+    font-size: var(--font-size-sm);
+    color: var(--text-100);
+    font-family: var(--font-dm-sans);
 }
