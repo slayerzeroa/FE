@@ -12,21 +12,6 @@ import React, { Component } from "react";
 //     });
 // };
 
-// eslint-disable-next-line
-const Board = ({ id, title, registerId, registerDate }) => {
-    return (
-        <tr>
-            <td>
-                <input type="checkbox"></input>
-            </td>
-            <td>{id}</td>
-            <td>{title}</td>
-            <td>{registerId}</td>
-            <td>{registerDate}</td>
-        </tr>
-    );
-};
-
 // export default BoardList;
 
 class QA extends Component {
@@ -52,13 +37,6 @@ class QA extends Component {
 
     render() {
         const { boardList } = this.state;
-        // const navigate = useNavigate();
-
-        // const { result } = boardList.map((v) => {
-        //     console.log(v);
-        //     return v;
-        // });
-        // console.log(result);
         console.log(boardList);
         return (
             <div className={styles.qa}>
@@ -173,7 +151,8 @@ class QA extends Component {
                                     <div />
                                     {/* </div> */}
                                 </Link>
-                                <div className={styles.group2}>
+                                <Link to={`/qa/${boardList?.[1]?.BOARD_ID}`} className={styles.group2}>
+                                    {/* <div className={styles.group2}> */}
                                     <div className={styles.div3}>
                                         <div className={styles.b}>{boardList?.[1]?.BOARD_ID}</div>
                                     </div>
@@ -198,7 +177,8 @@ class QA extends Component {
                                         <div className={styles.b}>{boardList?.[1]?.UPDATER_ID}</div>
                                     </div>
                                     <div />
-                                </div>
+                                    {/* </div> */}
+                                </Link>
                                 <div className={styles.group2}>
                                     <div className={styles.div3}>
                                         <div className={styles.b}>1</div>

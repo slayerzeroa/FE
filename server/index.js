@@ -42,6 +42,13 @@ app.get("/list", (req, res) => {
   });
 });
 
+app.get("/graduate", (req, res) => {
+  const sqlQuery = "SELECT *FROM GRADUATE;";
+  db.query(sqlQuery, (err, result) => {
+    res.send(result);
+  });
+});
+
 // // cors 허용해주는 코드 작성
 
 // let corsOptions = {
