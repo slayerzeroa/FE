@@ -48,6 +48,7 @@ const customStyles = {
 
 const Under1 = () => {
     const [users, setUsers] = useState([]);
+    const [showChart, setShowChart] = useState(false);
     useEffect(() => {
         Axios.get("http://localhost:8000/graduate", {})
             .then((res) => {
@@ -58,6 +59,10 @@ const Under1 = () => {
                 console.log(Error);
             });
     }, []);
+
+    const handleSearchClick = () => {
+        setShowChart(true);
+    };
 
     return (
         <div className={styles.div}>
@@ -112,26 +117,30 @@ const Under1 = () => {
                             <div className={styles.compBtnDefualt}>
                                 <div className={styles.node}>
                                     <img className={styles.icIcon} alt="" src="/ic4.svg" />
-                                    <b className={styles.text3}>검색하기</b>
+                                    <b className={styles.text3} onClick={handleSearchClick}>
+                                        검색하기
+                                    </b>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className={styles.compParent}>
                         <div className={styles.comp}>
-                            <div>
-                                <Chart
-                                    className={styles.value}
-                                    type="bar"
-                                    series={[
-                                        {
-                                            name: "series1",
-                                            data: users?.data?.map((user) => user.gpa),
-                                        },
-                                    ]}
-                                    options={{ chart: { height: 1200, width: 800 } }}
-                                ></Chart>
-                            </div>
+                            {showChart && (
+                                <div>
+                                    <Chart
+                                        className={styles.value}
+                                        type="bar"
+                                        series={[
+                                            {
+                                                name: "series1",
+                                                data: users?.data?.map((user) => user.gpa),
+                                            },
+                                        ]}
+                                        options={{ chart: { height: 1200, width: 800 } }}
+                                    ></Chart>
+                                </div>
+                            )}
                         </div>
                         <div className={styles.comp1}>
                             <b className={styles.text4}>통계 분석값을 Text로 넣을 수 있는 공간</b>
