@@ -1,9 +1,21 @@
+/* eslint-disable */
+
 // import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import styles from "./MainPage_Login.module.css";
 import React from "react";
+import { useLocation } from "react-router-dom";
 
 const MainPage_Login = () => {
+    const location = useLocation();
+    const walletInfo = { ...location.state };
+
+    if (walletInfo === undefined) {
+        console.log("walletAddress is undefined");
+    } else {
+        console.log("walletAddress is defined");
+    }
+
     return (
         <div className={styles.div}>
             <div className={styles.sidebar}>
@@ -38,7 +50,7 @@ const MainPage_Login = () => {
                 <div className={styles.iconParent}>
                     <img className={styles.icon} alt="" src="/icon1.svg" />
                     <div className={styles.avatar} />
-                    <div className={styles.adminA}>Admin A</div>
+                    <div className={styles.adminA}>{walletInfo.walletAddress}</div>
                     <img className={styles.iconcard} alt="" src="/iconarrowdown1.svg" />
                 </div>
             </div>
