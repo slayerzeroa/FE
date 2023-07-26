@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import styles from "./Grad2.module.css";
 import { NavLink, Link } from "react-router-dom";
 import React from "react";
@@ -5,6 +7,7 @@ import Chart from "react-apexcharts";
 import Select from "react-select";
 import Axios from "axios";
 import { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Majoroptions = [
     { value: "금융공학과", label: "금융공학과" },
@@ -48,6 +51,8 @@ const customStyles = {
 
 const Grad2 = () => {
     const [users, setUsers] = useState([]);
+    const [showChart, setShowChart] = useState(false);
+
     useEffect(() => {
         Axios.get("http://localhost:8000/graduate", {})
             .then((res) => {
@@ -58,6 +63,24 @@ const Grad2 = () => {
                 console.log(Error);
             });
     }, []);
+
+    const handleSearchClick = () => {
+        setShowChart(true);
+    };
+
+    const navigate = useNavigate();
+
+    // wallet props 받아오기
+    const location = useLocation();
+    const walletInfo = { ...location.state };
+
+    if (walletInfo === undefined) {
+        console.log("walletAddress is undefined");
+    } else {
+        console.log("walletAddress is defined");
+        console.log("walletAddress: ", walletInfo.walletAddress);
+    }
+
     return (
         <div className={styles.div}>
             <div className={styles.bodyWrapper}>
@@ -92,26 +115,30 @@ const Grad2 = () => {
                             <div className={styles.compBtnDefualt}>
                                 <div className={styles.node}>
                                     <img className={styles.icIcon} alt="" src="/ic4.svg" />
-                                    <b className={styles.text3}>검색하기</b>
+                                    <b className={styles.text3} onClick={handleSearchClick}>
+                                        검색하기
+                                    </b>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className={styles.compParent}>
                         <div className={styles.comp}>
-                            <div>
-                                <Chart
-                                    className={styles.value}
-                                    type="bar"
-                                    series={[
-                                        {
-                                            name: "series1",
-                                            data: users?.data?.map((user) => user.gpa),
-                                        },
-                                    ]}
-                                    options={{ chart: { height: 1200, width: 800 } }}
-                                ></Chart>
-                            </div>
+                            {showChart && (
+                                <div>
+                                    <Chart
+                                        className={styles.value}
+                                        type="bar"
+                                        series={[
+                                            {
+                                                name: "series1",
+                                                data: users?.data?.map((user) => user.gpa),
+                                            },
+                                        ]}
+                                        options={{ chart: { height: 1200, width: 800 } }}
+                                    ></Chart>
+                                </div>
+                            )}
                         </div>
                         <div className={styles.comp1}>
                             <b className={styles.text4}>통계 분석값을 Text로 넣을 수 있는 공간</b>
@@ -120,26 +147,58 @@ const Grad2 = () => {
                 </div>
             </div>
             <div className={styles.sidebar}>
-                <NavLink to="/main" style={{ textDecoration: "none" }}>
+                <NavLink
+                    to="/main"
+                    state={{
+                        walletAddress: walletInfo.walletAddress,
+                        currentBalance: walletInfo.currentBalance,
+                        chainId: walletInfo.chainId,
+                    }}
+                    style={{ textDecoration: "none" }}
+                >
                     <div className={styles.logo}>
                         <img className={styles.icIcon1} alt="" src="/ic.svg" />
                         <div className={styles.linkAjou}>Link Ajou</div>
                     </div>
                 </NavLink>
                 <div className={styles.nav}>
-                    <Link to="/grad1" style={{ textDecoration: "none", color: "var(--text-10)" }}>
+                    <Link
+                        to="/grad1"
+                        state={{
+                            walletAddress: walletInfo.walletAddress,
+                            currentBalance: walletInfo.currentBalance,
+                            chainId: walletInfo.chainId,
+                        }}
+                        style={{ textDecoration: "none", color: "var(--text-10)" }}
+                    >
                         <div className={styles.menu}>
                             <img className={styles.iconcard} alt="" src="/iconelement3.svg" />
                             <div className={styles.div1}>나의 정보</div>
                         </div>
                     </Link>
-                    <Link to="/grad2" style={{ textDecoration: "none", color: "var(--text-10)" }}>
+                    <Link
+                        to="/grad2"
+                        state={{
+                            walletAddress: walletInfo.walletAddress,
+                            currentBalance: walletInfo.currentBalance,
+                            chainId: walletInfo.chainId,
+                        }}
+                        style={{ textDecoration: "none", color: "var(--text-10)" }}
+                    >
                         <div className={styles.menu1}>
                             <img className={styles.iconcard} alt="" src="/iconcard1.svg" />
                             <div className={styles.div1}>동문 데이터 분석</div>
                         </div>
                     </Link>
-                    <Link to="/qa" style={{ textDecoration: "none", color: "var(--text-10)" }}>
+                    <Link
+                        to="/qa"
+                        state={{
+                            walletAddress: walletInfo.walletAddress,
+                            currentBalance: walletInfo.currentBalance,
+                            chainId: walletInfo.chainId,
+                        }}
+                        style={{ textDecoration: "none", color: "var(--text-10)" }}
+                    >
                         <div className={styles.menu2}>
                             <div className={styles.menu}>
                                 <img className={styles.iconcard} alt="" src="/icontransactionminus1.svg" />
@@ -147,7 +206,15 @@ const Grad2 = () => {
                             </div>
                         </div>
                     </Link>
-                    <Link to="/grad3" style={{ textDecoration: "none", color: "var(--text-10)" }}>
+                    <Link
+                        to="/grad3"
+                        state={{
+                            walletAddress: walletInfo.walletAddress,
+                            currentBalance: walletInfo.currentBalance,
+                            chainId: walletInfo.chainId,
+                        }}
+                        style={{ textDecoration: "none", color: "var(--text-10)" }}
+                    >
                         <div className={styles.menu}>
                             <img className={styles.iconcard} alt="" src="/iconactivity.svg" />
                             <div className={styles.div1}>토큰 환전</div>
@@ -157,7 +224,7 @@ const Grad2 = () => {
                 <div className={styles.iconParent}>
                     <img className={styles.icon} alt="" src="/icon.svg" />
                     <div className={styles.avatar} />
-                    <div className={styles.adminA}>Admin A</div>
+                    <div className={styles.adminA}>{walletInfo.walletAddress}</div>
                     <img className={styles.iconcard} alt="" src="/iconarrowdown.svg" />
                 </div>
             </div>

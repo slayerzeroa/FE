@@ -1,15 +1,21 @@
+/* eslint-disable */
+
 import styles from "./Under3.module.css";
 import { NavLink, Link } from "react-router-dom";
 import React from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const Under3 = () => {
+    const location = useLocation();
+    const walletInfo = { ...location.state };
     return (
         <div className={styles.div}>
             <div className={styles.inner}>
                 <div className={styles.iconParent}>
                     <img className={styles.icon} alt="" src="/icon3.svg" />
                     <div className={styles.avatar} />
-                    <div className={styles.adminA}>Admin A</div>
+                    <div className={styles.adminA}>{walletInfo.walletAddress}</div>
                     <img className={styles.iconarrowDown} alt="" src="/iconarrowdown4.svg" />
                 </div>
             </div>
@@ -156,26 +162,58 @@ const Under3 = () => {
                 </div>
             </div>
             <div className={styles.sidebar}>
-                <NavLink to="/main" style={{ textDecoration: "none" }}>
+                <NavLink
+                    state={{
+                        walletAddress: walletInfo.walletAddress,
+                        currentBalance: walletInfo.currentBalance,
+                        chainId: walletInfo.chainId,
+                    }}
+                    to="/main"
+                    style={{ textDecoration: "none" }}
+                >
                     <div className={styles.logo}>
                         <img className={styles.icIcon} alt="" src="/ic3.svg" />
                         <div className={styles.linkAjou}>Link Ajou</div>
                     </div>
                 </NavLink>
                 <div className={styles.nav}>
-                    <Link to="/under1" style={{ textDecoration: "none", color: "var(--text-10)" }}>
+                    <Link
+                        state={{
+                            walletAddress: walletInfo.walletAddress,
+                            currentBalance: walletInfo.currentBalance,
+                            chainId: walletInfo.chainId,
+                        }}
+                        to="/under1"
+                        style={{ textDecoration: "none", color: "var(--text-10)" }}
+                    >
                         <div className={styles.menu}>
                             <img className={styles.iconarrowDown} alt="" src="/iconelement3.svg" />
                             <div className={styles.div7}>졸업생 데이터 분석</div>
                         </div>
                     </Link>
-                    <Link to="/under2" style={{ textDecoration: "none", color: "var(--text-10)" }}>
+                    <Link
+                        state={{
+                            walletAddress: walletInfo.walletAddress,
+                            currentBalance: walletInfo.currentBalance,
+                            chainId: walletInfo.chainId,
+                        }}
+                        to="/under2"
+                        style={{ textDecoration: "none", color: "var(--text-10)" }}
+                    >
                         <div className={styles.menu}>
                             <img className={styles.iconarrowDown} alt="" src="/iconcard.svg" />
                             <div className={styles.div7}>맞춤형 활동 추천</div>
                         </div>
                     </Link>
-                    <Link to="/qa1" style={{ textDecoration: "none", color: "var(--text-10)" }}>
+                    <Link
+                        state={{
+                            walletAddress: walletInfo.walletAddress,
+                            currentBalance: walletInfo.currentBalance,
+                            chainId: walletInfo.chainId,
+                        }}
+                        to="/qa1"
+                        style={{ textDecoration: "none", color: "var(--text-10)" }}
+                    >
                         <div className={styles.nodeContainer}>
                             <div className={styles.menu}>
                                 <img className={styles.iconarrowDown} alt="" src="/icontransactionminus1.svg" />
@@ -183,7 +221,15 @@ const Under3 = () => {
                             </div>
                         </div>
                     </Link>
-                    <Link to="/under3" style={{ textDecoration: "none", color: "var(--text-10)" }}>
+                    <Link
+                        state={{
+                            walletAddress: walletInfo.walletAddress,
+                            currentBalance: walletInfo.currentBalance,
+                            chainId: walletInfo.chainId,
+                        }}
+                        to="/under3"
+                        style={{ textDecoration: "none", color: "var(--text-10)" }}
+                    >
                         <div className={styles.menu3}>
                             <img className={styles.iconarrowDown} alt="" src="/iconactivity1.svg" />
                             <div className={styles.div7}>토큰 환전</div>
@@ -193,7 +239,7 @@ const Under3 = () => {
                 <div className={styles.iconGroup}>
                     <img className={styles.icon} alt="" src="/icon3.svg" />
                     <div className={styles.avatar} />
-                    <div className={styles.adminA}>Admin A</div>
+                    <div className={styles.adminA}>{walletInfo.walletAddress}</div>
                     <img className={styles.iconarrowDown} alt="" src="/iconarrowdown4.svg" />
                 </div>
             </div>

@@ -4,7 +4,8 @@ import MainPage_Logout from "./pages/MainPage_Logout";
 
 import QA from "./pages/QA";
 import QA1 from "./pages/QA1";
-import PostView from "./pages/post/PostView";
+import GradPostView from "./pages/post/GradPostView";
+import UnderPostView from "./pages/post/UnderPostView";
 // import QAMain from "./pages/post/PostMain";
 
 import Grad0 from "./pages/Grad0";
@@ -109,7 +110,8 @@ function App() {
             <Route path="/qa" element={<QA />} />
             <Route path="/qa1" element={<QA1 />} />
             {/* 포스트 넘버 */}
-            <Route exact path="/qa/:no" element={<PostView />} />
+            <Route exact path="/qa/:no" element={<GradPostView />} />
+            <Route exact path="/qa1/:no" element={<UnderPostView />} />
             {/* 포스트 뷰
             <Route exact path="/" component={QAView} /> */}
             {/* 글쓰기 */}
