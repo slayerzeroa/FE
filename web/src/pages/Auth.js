@@ -48,39 +48,70 @@ const Auth = () => {
             </div>
             <div className={styles.bodyWrapper}>
                 <div className={styles.body}>
-                    <div className={styles.body}>
-                        개인정보 수집 및 이용 동의
-                        <div className={styles.subtitle}>Link Ajou</div>
-                        <div className={styles.subtitle2}>개인정보 수집 및 이용에 대한 안내</div>
-                        <div className={styles.subtitle3}>
-                            Link Ajou는 개인정보보호법 제30조에 따라 정보주체의 개인정보를 보호하고 이와 관련한 고충을
-                            신속하고 원활하게 처리할 수 있도록 하기 위하여 다음과 같이 개인정보 처리 방침을
-                            수립·공개합니다.
-                            <br />
-                            <br />
-                            ○ 이 개인정보처리방침은 2021년 8월 1부터 적용됩니다.
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            <div className={styles.subtitle2}>1. 개인정보의 처리 목적</div>
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            <div className={styles.subtitle2}>2. 개인정보의 처리 및 보유 기간</div>
-                            <br />
-                            <br />
-                            <br />
-                        </div>
-                    </div>
+                    <form>
+                        <label>회원정보 입력 및 이용약관 동의</label>
+                        <ul>
+                            <li>
+                                <input
+                                    type="checkbox"
+                                    name="termAgreed"
+                                    checked={agreements.termAgreed}
+                                    onChange={handleAgreementChange}
+                                />
+                                <label>[필수] 이용약관 동의</label>
+                            </li>
+                            <li>
+                                <input
+                                    type="checkbox"
+                                    name="personallInfoAgreed"
+                                    checked={agreements.personallInfoAgreed}
+                                    onChange={handleAgreementChange}
+                                />
+                                <label>[필수] 개인정보 수집 및 이용 동의</label>
+                            </li>
+                            <li>
+                                <input
+                                    type="checkbox"
+                                    name="provisionAgreed"
+                                    checked={agreements.provisionAgreed}
+                                    onChange={handleAgreementChange}
+                                />
+                                <label>[필수] 서비스 이용약관 동의</label>
+                            </li>
+                            <li>
+                                <input
+                                    type="checkbox"
+                                    name="locationAgreed"
+                                    checked={agreements.locationAgreed}
+                                    onChange={handleAgreementChange}
+                                />
+                                <label>[필수] 위치정보 이용약관 동의</label>
+                            </li>
+
+                            <li>
+                                <input
+                                    type="checkbox"
+                                    name="allAgreed"
+                                    checked={allAgreed}
+                                    onChange={handleAllAgreedChange}
+                                />
+                                <label>모두 동의합니다.</label>
+                            </li>
+
+                            <li>
+                                <NavLink
+                                    state={{
+                                        walletAddress: walletInfo.walletAddress,
+                                        currentBalance: walletInfo.currentBalance,
+                                        chainId: walletInfo.chainId,
+                                    }}
+                                    to="/main"
+                                >
+                                    <button type="submit">확인</button>
+                                </NavLink>
+                            </li>
+                        </ul>
+                    </form>
                 </div>
             </div>
             <div className={styles.sidebar}>
