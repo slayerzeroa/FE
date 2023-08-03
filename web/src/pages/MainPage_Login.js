@@ -41,6 +41,16 @@ const MainPage_Login = () => {
         });
     };
 
+    const go_auth = () => {
+        navigate("/auth", {
+            state: {
+                walletAddress: walletInfo.walletAddress,
+                currentBalance: walletInfo.currentBalance,
+                chainId: walletInfo.chainId,
+            },
+        });
+    };
+
     return (
         <div className={styles.div}>
             <div className={styles.sidebar}>
@@ -98,11 +108,11 @@ const MainPage_Login = () => {
                                 <div className={styles.text}>졸업생</div>
                             </button>
                         </div>
-                        <div className={styles.compButton}>
-                            <div className={styles.text}>
-                                <p className={styles.p}>재학생/졸업생</p>
-                                <p className={styles.p}>인증하기</p>
-                            </div>
+                        <div onClick={go_auth} style={{ textDecoration: "none" }}>
+                            <button className={styles.compButton}>
+                                <div className={styles.text}>재학생/졸업생</div>
+                                <div className={styles.text}>인증하기</div>
+                            </button>
                         </div>
                     </div>
                     <b className={styles.title}>

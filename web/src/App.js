@@ -18,6 +18,8 @@ import Under1 from "./pages/Under1";
 import Under2 from "./pages/Under2";
 import Under3 from "./pages/Under3";
 
+import Auth from "./pages/Auth";
+
 import { useEffect } from "react";
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -128,6 +130,9 @@ function App() {
             <Route path="/grad1" element={<Grad1 />} />
             <Route path="/grad2" element={<Grad2 />} />
             <Route path="/grad3" element={<Grad3 />} />
+
+            {/* 본인인증 페이지 */}
+            <Route path="/auth" element={<Auth />} />
         </Routes>
     );
 }
