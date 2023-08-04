@@ -1,8 +1,23 @@
+/* eslint-disable */
+import { useLocation, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import styles from "./Grad3.module.css";
 import { NavLink, Link } from "react-router-dom";
 import React from "react";
+import prohibit from "../components/alarm/prohibit";
 
 const Grad3 = () => {
+    const navigate = useNavigate();
+
+    // wallet props 받아오기
+    const location = useLocation();
+    const walletInfo = { ...location.state };
+
+    // length가 0이면 undefined
+    if (Object.keys(walletInfo).length === 0) {
+        return prohibit();
+    }
+
     return (
         <div className={styles.div}>
             <div className={styles.bodyWrapper}>
@@ -148,26 +163,58 @@ const Grad3 = () => {
                 </div>
             </div>
             <div className={styles.sidebar}>
-                <NavLink to="/main" style={{ textDecoration: "none" }}>
+                <NavLink
+                    state={{
+                        walletAddress: walletInfo.walletAddress,
+                        currentBalance: walletInfo.currentBalance,
+                        chainId: walletInfo.chainId,
+                    }}
+                    to="/main"
+                    style={{ textDecoration: "none" }}
+                >
                     <div className={styles.logo}>
                         <img className={styles.icIcon} alt="" src="/ic.svg" />
                         <div className={styles.linkAjou}>Link Ajou</div>
                     </div>
                 </NavLink>
                 <div className={styles.nav}>
-                    <Link to="/grad1" style={{ textDecoration: "none", color: "var(--text-10)" }}>
+                    <Link
+                        state={{
+                            walletAddress: walletInfo.walletAddress,
+                            currentBalance: walletInfo.currentBalance,
+                            chainId: walletInfo.chainId,
+                        }}
+                        to="/grad1"
+                        style={{ textDecoration: "none", color: "var(--text-10)" }}
+                    >
                         <div className={styles.menu}>
                             <img className={styles.iconcard} alt="" src="/iconelement3.svg" />
                             <div className={styles.div7}>나의 정보</div>
                         </div>
                     </Link>
-                    <Link to="/grad2" style={{ textDecoration: "none", color: "var(--text-10)" }}>
+                    <Link
+                        state={{
+                            walletAddress: walletInfo.walletAddress,
+                            currentBalance: walletInfo.currentBalance,
+                            chainId: walletInfo.chainId,
+                        }}
+                        to="/grad2"
+                        style={{ textDecoration: "none", color: "var(--text-10)" }}
+                    >
                         <div className={styles.menu}>
                             <img className={styles.iconcard} alt="" src="/iconcard.svg" />
                             <div className={styles.div7}>동문 데이터 분석</div>
                         </div>
                     </Link>
-                    <Link to="/qa" style={{ textDecoration: "none", color: "var(--text-10)" }}>
+                    <Link
+                        state={{
+                            walletAddress: walletInfo.walletAddress,
+                            currentBalance: walletInfo.currentBalance,
+                            chainId: walletInfo.chainId,
+                        }}
+                        to="/qa"
+                        style={{ textDecoration: "none", color: "var(--text-10)" }}
+                    >
                         <div className={styles.nodeContainer}>
                             <div className={styles.menu}>
                                 <img className={styles.iconcard} alt="" src="/icontransactionminus1.svg" />
@@ -175,7 +222,15 @@ const Grad3 = () => {
                             </div>
                         </div>
                     </Link>
-                    <Link to="/grad3" style={{ textDecoration: "none", color: "var(--text-10)" }}>
+                    <Link
+                        state={{
+                            walletAddress: walletInfo.walletAddress,
+                            currentBalance: walletInfo.currentBalance,
+                            chainId: walletInfo.chainId,
+                        }}
+                        to="/grad3"
+                        style={{ textDecoration: "none", color: "var(--text-10)" }}
+                    >
                         <div className={styles.menu3}>
                             <img className={styles.iconcard} alt="" src="/iconactivity1.svg" />
                             <div className={styles.div7}>토큰 환전</div>
@@ -185,7 +240,7 @@ const Grad3 = () => {
                 <div className={styles.iconParent}>
                     <img className={styles.icon} alt="" src="/icon.svg" />
                     <div className={styles.avatar} />
-                    <div className={styles.adminA}>Admin A</div>
+                    <div className={styles.adminA}>{walletInfo.walletAddress}</div>
                     <img className={styles.iconcard} alt="" src="/iconarrowdown.svg" />
                 </div>
             </div>

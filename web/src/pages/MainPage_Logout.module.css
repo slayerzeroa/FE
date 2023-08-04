@@ -1,154 +1,154 @@
 .icIcon {
-  position: relative;
-  width: 27.78px;
-  height: 26.81px;
+    position: relative;
+    width: 27.78px;
+    height: 26.81px;
 }
 .linkAjou {
-  position: relative;
-  letter-spacing: -0.05em;
-  font-weight: 900;
+    position: relative;
+    letter-spacing: -0.05em;
+    font-weight: 900;
 }
 .logo {
-  display: flex;
-  flex-direction: row;
-  padding: var(--padding-11xs) 0;
-  align-items: center;
-  justify-content: flex-start;
-  gap: var(--gap-3xs);
+    display: flex;
+    flex-direction: row;
+    padding: var(--padding-11xs);
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--gap-3xs);
 }
 .nav {
-  flex: 1;
+    flex: 1;
 }
 .text {
-  position: relative;
-  letter-spacing: -0.08em;
+    position: relative;
+    letter-spacing: -0.08em;
 }
 .compButton {
-  border-radius: var(--br-3xs);
-  background-color: #0073e8;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid #0074eb;
-  display: flex;
-  flex-direction: column;
-  padding: 15px 50px;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: var(--font-size-lg);
-  color: var(--color-white);
-  font-family: var(--font-spoqa-han-sans-neo);
+    border-radius: var(--br-3xs);
+    background-color: #0073e8;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid #0074eb;
+    display: flex;
+    flex-direction: column;
+    padding: 2vh 3vw;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: var(--font-size-lg);
+    color: var(--color-white);
+    font-family: var(--font-spoqa-han-sans-neo);
 }
 .bgIcon,
 .sidebar {
-  position: absolute;
-  top: 0;
-  left: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 .sidebar {
-  background-color: var(--color-ghostwhite-100);
-  border-bottom: 1px solid var(--color-royalblue-100);
-  box-sizing: border-box;
-  width: 1920px;
-  height: 102px;
-  display: flex;
-  flex-direction: row;
-  padding: var(--padding-xl) var(--padding-61xl);
-  align-items: center;
-  justify-content: center;
-  gap: var(--gap-51xl);
+    background-color: var(--color-ghostwhite-100);
+    border-bottom: 1px solid var(--color-royalblue-100);
+    box-sizing: border-box;
+    width: 100vw;
+    height: 13vh;
+    display: flex;
+    flex-direction: row;
+    padding: var(--padding-xl) var(--padding-61xl);
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
 }
 .bgIcon {
-  border-radius: var(--br-3xs);
-  width: 1760px;
-  height: 818px;
-  object-fit: cover;
+    border-radius: var(--br-3xs);
+    width: 88vw;
+    height: 90vh;
+    object-fit: cover;
 }
 .text1 {
-  position: relative;
-  letter-spacing: -0.08em;
-  font-weight: 300;
+    position: relative;
+    letter-spacing: -0.08em;
+    font-weight: 300;
 }
 .compButton1 {
-  border-radius: var(--br-3xs);
-  background: linear-gradient(109.6deg, #fff, rgba(255, 255, 255, 0.48));
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid var(--color-white);
-  box-sizing: border-box;
-  width: 350px;
-  height: 216px;
-  display: flex;
-  flex-direction: column;
-  padding: var(--padding-xl);
-  align-items: center;
-  justify-content: center;
+    border-radius: var(--br-3xs);
+    background: linear-gradient(109.6deg, #fff, rgba(255, 255, 255, 0.48));
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--color-white);
+    box-sizing: border-box;
+    width: 25vw;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding-xl);
+    align-items: center;
+    justify-content: center;
 }
 .p {
-  margin: 0;
+    margin: 0;
 }
 .lH,
 .title {
-  position: absolute;
+    position: absolute;
 }
 .lH {
-  top: 385.97px;
-  left: 201.61px;
-  width: 1355.63px;
-  height: 198.97px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: var(--gap-41xl);
+    top: 50vh;
+    left: 0vw;
+    width: 1355.63px;
+    height: 198.97px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-41xl);
 }
 .title {
-  top: 210.95px;
-  left: 631.47px;
-  font-size: var(--font-size-27xl);
-  letter-spacing: -0.03em;
-  line-height: 50px;
-  display: inline-block;
-  color: var(--color-white);
-  width: 497.06px;
-  height: 92.12px;
-  text-shadow: 0 4px 40px rgba(120, 121, 121, 0.3);
+    top: 20vh;
+    left: 22vw;
+    font-size: var(--font-size-27xl);
+    letter-spacing: -0.03em;
+    line-height: 50px;
+    display: inline-block;
+    color: var(--color-white);
+    width: 50vw;
+    height: 10vh;
+    text-shadow: 0 4px 40px rgba(120, 121, 121, 0.3);
 }
 .body1 {
-  align-self: stretch;
-  flex: 1;
-  position: relative;
+    align-self: stretch;
+    flex: 1;
+    position: relative;
 }
 .body,
 .div {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 .body {
-  position: absolute;
-  top: 102px;
-  left: 0;
-  width: 1920px;
-  height: 978px;
-  display: flex;
-  flex-direction: column;
-  padding: var(--padding-61xl);
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: var(--font-size-5xl);
-  color: var(--color-darkslategray-100);
-  font-family: var(--font-spoqa-han-sans-neo);
+    position: absolute;
+    top: 10vh;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding-61xl);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: var(--font-size-5xl);
+    color: var(--color-darkslategray-100);
+    font-family: var(--font-spoqa-han-sans-neo);
 }
 .div {
-  position: relative;
-  border-radius: var(--br-3xs);
-  background-color: var(--color-white);
-  border: 3px solid var(--color-cornflowerblue);
-  width: 100%;
-  height: 1086px;
-  overflow: hidden;
-  text-align: left;
-  font-size: var(--font-size-sm);
-  color: var(--color-dodgerblue-100);
-  font-family: var(--font-roboto);
+    position: relative;
+    border-radius: var(--br-3xs);
+    background-color: var(--color-white);
+    border: 3px solid var(--color-cornflowerblue);
+    width: 100%;
+    height: 120vh;
+    overflow: hidden;
+    text-align: left;
+    font-size: var(--font-size-sm);
+    color: var(--color-dodgerblue-100);
+    font-family: var(--font-roboto);
 }

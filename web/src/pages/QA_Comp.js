@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import styles from "./QA.module.css";
 import { NavLink, Link } from "react-router-dom";
 import Axios from "axios";
@@ -23,77 +25,6 @@ const Board = ({ id, title, registerId, registerDate }) => {
         </tr>
     );
 };
-
-// /**
-//  * BoardList class
-//  */
-// class BoardList extends Component {
-//     state = {
-//         boardList,
-//     };
-
-//     getList = () => {
-//         Axios.get("http://localhost:8000/list", {})
-//             .then((res) => {
-//                 const { data } = res;
-//                 this.setState({
-//                     boardList,
-//                 });
-//             })
-//             .catch((e) => {
-//                 console.error(e);
-//             });
-//     };
-
-//     /**
-//      */
-//     componentDidMount() {
-//         this.getList();
-//     }
-
-//     /**
-//      * @return {Component} Component
-//      */
-//     render() {
-//         // eslint-disable-next-line
-//         const { boardList } = this.state;
-
-//         return (
-//             <div>
-//                 <Table striped bordered hover>
-//                     <thead>
-//                         <tr>
-//                             <th>선택</th>
-//                             <th>번호</th>
-//                             <th>제목</th>
-//                             <th>작성자</th>
-//                             <th>작성일</th>
-//                         </tr>
-//                     </thead>
-//                     <tbody>
-//                         {
-//                             // eslint-disable-next-line
-//                             boardList.map((v) => {
-//                                 return (
-//                                     <Board
-//                                         id={v.BOARD_ID}
-//                                         title={v.BOARD_TITLE}
-//                                         registerId={v.REGISTER_ID}
-//                                         registerDate={v.REGISTER_DATE}
-//                                     />
-//                                 );
-//                             })}
-//                     </tbody>
-//                 </Table>
-//                 <Button variant="info">글쓰기</Button>
-//                 <Button variant="secondary">수정하기</Button>
-//                 <Button variant="danger">삭제하기</Button>
-//             </div>
-//         );
-//     }
-// }
-
-// export default BoardList;
 
 class QA extends Component {
     state = {

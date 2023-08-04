@@ -4,27 +4,67 @@
 import { NavLink } from "react-router-dom";
 import styles from "./MainPage_Login.module.css";
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import styled from "styled-components";
+import prohibit from "../components/alarm/prohibit";
 
 const MainPage_Login = () => {
+    const navigate = useNavigate();
+
+    // wallet props 받아오기
     const location = useLocation();
     const walletInfo = { ...location.state };
 
-    if (walletInfo === undefined) {
-        console.log("walletAddress is undefined");
-    } else {
-        console.log("walletAddress is defined");
+    // length가 0이면 undefined
+    if (Object.keys(walletInfo).length === 0) {
+        return prohibit();
     }
+
+    const go_grad = () => {
+        navigate("/grad0", {
+            state: {
+                walletAddress: walletInfo.walletAddress,
+                currentBalance: walletInfo.currentBalance,
+                chainId: walletInfo.chainId,
+            },
+        });
+    };
+
+    const go_under = () => {
+        navigate("/under0", {
+            state: {
+                walletAddress: walletInfo.walletAddress,
+                currentBalance: walletInfo.currentBalance,
+                chainId: walletInfo.chainId,
+            },
+        });
+    };
+
+    const go_auth = () => {
+        navigate("/auth", {
+            state: {
+                walletAddress: walletInfo.walletAddress,
+                currentBalance: walletInfo.currentBalance,
+                chainId: walletInfo.chainId,
+            },
+        });
+    };
 
     return (
         <div className={styles.div}>
             <div className={styles.sidebar}>
-                <NavLink to="/main" style={{ textDecoration: "none" }}>
-                    <div className={styles.logo} to="/main">
+                <NavLink
+                    state={{
+                        walletAddress: walletInfo.walletAddress,
+                        currentBalance: walletInfo.currentBalance,
+                        chainId: walletInfo.chainId,
+                    }}
+                    style={{ border: "none", textDecoration: "none" }}
+                >
+                    <div className={styles.logo}>
                         <img className={styles.icIcon} alt="" src="/ic1.svg" />
-                        <div className={styles.linkAjou} to="/main">
-                            Link Ajou
-                        </div>
+                        <div className={styles.linkAjou}>Link Ajou</div>
                     </div>
                 </NavLink>
                 <div className={styles.nav}>
@@ -58,21 +98,21 @@ const MainPage_Login = () => {
                 <div className={styles.body1}>
                     <img className={styles.bgIcon} alt="" src="/bg1@2x.png" />
                     <div className={styles.lH}>
-                        <NavLink to="/under0" style={{ textDecoration: "none" }}>
-                            <div className={styles.compButton}>
+                        <div onClick={go_under} style={{ textDecoration: "none" }}>
+                            <button className={styles.compButton}>
                                 <div className={styles.text}>재학생</div>
-                            </div>
-                        </NavLink>
-                        <NavLink to="/grad0" style={{ textDecoration: "none" }}>
-                            <div className={styles.compButton}>
+                            </button>
+                        </div>
+                        <div onClick={go_grad} style={{ textDecoration: "none" }}>
+                            <button className={styles.compButton}>
                                 <div className={styles.text}>졸업생</div>
-                            </div>
-                        </NavLink>
-                        <div className={styles.compButton}>
-                            <div className={styles.text}>
-                                <p className={styles.p}>재학생/졸업생</p>
-                                <p className={styles.p}>인증하기</p>
-                            </div>
+                            </button>
+                        </div>
+                        <div onClick={go_auth} style={{ textDecoration: "none" }}>
+                            <button className={styles.compButton}>
+                                <div className={styles.text}>재학생/졸업생</div>
+                                <div className={styles.text}>인증하기</div>
+                            </button>
                         </div>
                     </div>
                     <b className={styles.title}>
