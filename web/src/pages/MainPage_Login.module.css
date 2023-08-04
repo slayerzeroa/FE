@@ -172,8 +172,8 @@
     gap: var(--gap-41xl);
 }
 .title {
-    top: 20vh;
-    left: 22vw;
+    position: relative;
+    top: 18vh;
     font-size: var(--font-size-27xl);
     letter-spacing: -0.03em;
     line-height: 50px;
@@ -182,6 +182,7 @@
     width: 50vw;
     height: 10vh;
     text-shadow: 0 4px 40px rgba(120, 121, 121, 0.3);
+    text-align: center;
 }
 .body1 {
     align-self: stretch;

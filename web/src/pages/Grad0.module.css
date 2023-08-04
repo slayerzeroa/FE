@@ -51,10 +51,10 @@
 }
 .bodyWrapper {
     position: absolute;
-    top: 102px;
+    top: 10.9vh;
     left: 0;
-    width: 1920px;
-    height: 978px;
+    width: 100vw;
+    height: 140vh;
     display: flex;
     flex-direction: column;
     padding: var(--padding-61xl);

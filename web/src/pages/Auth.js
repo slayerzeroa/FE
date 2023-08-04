@@ -1,11 +1,14 @@
 /* eslint-disable */
 
-import styles from "./Grad0.module.css";
+import styles from "./Auth.module.css";
 import { NavLink, Link } from "react-router-dom";
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import prohibit from "../components/alarm/prohibit";
+import { Button } from "react-bootstrap";
+import check_alarm from "../components/alarm/check_alarm";
+import auth_alarm from "../components/alarm/auth_alarm";
 
 const Auth = () => {
     // wallet props 받아오기
@@ -25,6 +28,25 @@ const Auth = () => {
         locationAgreed: false,
         serviceAlramAgreed: false,
     });
+
+    const navigate = useNavigate();
+
+    const ischecked = () => {
+        if (agreements.termAgreed && agreements.personallInfoAgreed && agreements.provisionAgreed) {
+            return (
+                auth_alarm(),
+                navigate("/main", {
+                    state: {
+                        walletAddress: walletInfo.walletAddress,
+                        currentBalance: walletInfo.currentBalance,
+                        chainId: walletInfo.chainId,
+                    },
+                })
+            );
+        } else {
+            return check_alarm();
+        }
+    };
 
     const handleAgreementChange = (e) => {
         const { name, checked } = e.target;
@@ -54,71 +76,56 @@ const Auth = () => {
             </div>
             <div className={styles.bodyWrapper}>
                 <div className={styles.body}>
-                    <div className={styles.bodyInner}></div>
-                    <form>
-                        <label>회원정보 입력 및 이용약관 동의</label>
-                        <ul>
-                            <li>
-                                <input
-                                    type="checkbox"
-                                    name="termAgreed"
-                                    checked={agreements.termAgreed}
-                                    onChange={handleAgreementChange}
-                                />
-                                <label>[필수] 이용약관 동의</label>
-                            </li>
-                            <li>
-                                <input
-                                    type="checkbox"
-                                    name="personallInfoAgreed"
-                                    checked={agreements.personallInfoAgreed}
-                                    onChange={handleAgreementChange}
-                                />
-                                <label>[필수] 개인정보 수집 및 이용 동의</label>
-                            </li>
-                            <li>
-                                <input
-                                    type="checkbox"
-                                    name="provisionAgreed"
-                                    checked={agreements.provisionAgreed}
-                                    onChange={handleAgreementChange}
-                                />
-                                <label>[필수] 서비스 이용약관 동의</label>
-                            </li>
-                            <li>
-                                <input
-                                    type="checkbox"
-                                    name="locationAgreed"
-                                    checked={agreements.locationAgreed}
-                                    onChange={handleAgreementChange}
-                                />
-                                <label>[필수] 위치정보 이용약관 동의</label>
-                            </li>
+                    <div className={styles.bodyInner}>
+                        <div className={styles.innerText}>
+                            <label> 회원정보 입력 및 이용약관 동의</label>
+                            <ul>
+                                <div>
+                                    <input
+                                        type="checkbox"
+                                        name="termAgreed"
+                                        checked={agreements.termAgreed}
+                                        onChange={handleAgreementChange}
+                                    />
+                                    <label> [필수] 이용약관 동의</label>
+                                </div>
+                                <div>
+                                    <input
+                                        type="checkbox"
+                                        name="personallInfoAgreed"
+                                        checked={agreements.personallInfoAgreed}
+                                        onChange={handleAgreementChange}
+                                    />
+                                    <label> [필수] 개인정보 수집 및 이용 동의</label>
+                                </div>
+                                <div>
+                                    <input
+                                        type="checkbox"
+                                        name="provisionAgreed"
+                                        checked={agreements.provisionAgreed}
+                                        onChange={handleAgreementChange}
+                                    />
+                                    <label> [필수] 서비스 이용약관 동의</label>
+                                </div>
+                                <div>
+                                    <label></label>
+                                </div>
 
-                            <li>
-                                <input
-                                    type="checkbox"
-                                    name="allAgreed"
-                                    checked={allAgreed}
-                                    onChange={handleAllAgreedChange}
-                                />
-                                <label>모두 동의합니다.</label>
-                            </li>
-
-                            <li>
-                                <NavLink
-                                    state={{
-                                        walletAddress: walletInfo.walletAddress,
-                                        currentBalance: walletInfo.currentBalance,
-                                        chainId: walletInfo.chainId,
-                                    }}
-                                    to="/main"
-                                >
-                                    <button type="submit">확인</button>
-                                </NavLink>
-                            </li>
-                        </ul>
-                    </form>
+                                <div>
+                                    <input
+                                        type="checkbox"
+                                        name="allAgreed"
+                                        checked={allAgreed}
+                                        onChange={handleAllAgreedChange}
+                                    />
+                                    <label> 모두 동의합니다 </label>
+                                    <div className={styles.button} onClick={ischecked}>
+                                        <Button>확인</Button>
+                                    </div>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className={styles.sidebar}>
