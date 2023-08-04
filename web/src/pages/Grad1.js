@@ -7,6 +7,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Select from "react-select";
 import CreatableSelect from "react-select/creatable";
+import prohibit from "../components/alarm/prohibit";
+import { Button } from "react-bootstrap";
 
 const Grad1 = () => {
     const navigate = useNavigate();
@@ -14,6 +16,11 @@ const Grad1 = () => {
     // wallet props 받아오기
     const location = useLocation();
     const walletInfo = { ...location.state };
+
+    // length가 0이면 undefined
+    if (Object.keys(walletInfo).length === 0) {
+        return prohibit();
+    }
 
     if (walletInfo === undefined) {
         console.log("walletAddress is undefined");
@@ -286,8 +293,9 @@ const Grad1 = () => {
                                 </div>
                             </div>
                         </div>
-                        <img className={styles.groupChild} alt="" src="/rectangle-145.svg" />
-                        <div className={styles.div2}>저장하기</div>
+                        <div className={styles.button}>
+                            <Button size="lg">저장하기</Button>
+                        </div>
                     </div>
                 </div>
             </div>

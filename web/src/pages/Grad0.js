@@ -5,6 +5,7 @@ import { NavLink, Link } from "react-router-dom";
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import prohibit from "../components/alarm/prohibit";
 
 const Grad0 = () => {
     const navigate = useNavigate();
@@ -12,6 +13,11 @@ const Grad0 = () => {
     // wallet props 받아오기
     const location = useLocation();
     const walletInfo = { ...location.state };
+
+    // length가 0이면 undefined
+    if (Object.keys(walletInfo).length === 0) {
+        return prohibit();
+    }
 
     if (walletInfo === undefined) {
         console.log("walletAddress is undefined");

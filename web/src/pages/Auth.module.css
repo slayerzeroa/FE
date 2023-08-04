@@ -131,8 +131,8 @@
     left: 0;
     background-color: var(--color-ghostwhite-100);
     border-bottom: 1px solid var(--color-royalblue-100);
-    width: 1920px;
-    height: 102px;
+    width: 100vw;
+    height: 13vh;
     display: flex;
     flex-direction: row;
     padding: var(--padding-xl) var(--padding-21xl);

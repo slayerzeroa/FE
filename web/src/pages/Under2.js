@@ -5,6 +5,7 @@ import { NavLink, Link } from "react-router-dom";
 import React from "react";
 import Select from "react-select";
 import { useLocation, useNavigate } from "react-router-dom";
+import prohibit from "../components/alarm/prohibit";
 
 // import Axios from "axios";
 // import { useState, useEffect } from "react";
@@ -53,6 +54,11 @@ const Under2 = () => {
     // wallet props 받아오기
     const location = useLocation();
     const walletInfo = { ...location.state };
+
+    // length가 0이면 undefined
+    if (Object.keys(walletInfo).length === 0) {
+        return prohibit();
+    }
 
     return (
         <div className={styles.div}>

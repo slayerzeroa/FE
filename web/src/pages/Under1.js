@@ -8,6 +8,7 @@ import Select from "react-select";
 import Axios from "axios";
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import prohibit from "../components/alarm/prohibit";
 
 const Majoroptions = [
     { value: "금융공학과", label: "금융공학과" },
@@ -53,6 +54,11 @@ const Under1 = () => {
     // wallet props 받아오기
     const location = useLocation();
     const walletInfo = { ...location.state };
+
+    // length가 0이면 undefined
+    if (Object.keys(walletInfo).length === 0) {
+        return prohibit();
+    }
 
     const [users, setUsers] = useState([]);
     const [showChart, setShowChart] = useState(false);
@@ -144,7 +150,7 @@ const Under1 = () => {
                                                 data: users?.data?.map((user) => user.gpa),
                                             },
                                         ]}
-                                        options={{ chart: { height: 1200, width: 800 } }}
+                                        options={{ chart: { height: 100, width: 100 } }}
                                     ></Chart>
                                 </div>
                             )}

@@ -6,6 +6,7 @@ import Axios from "axios";
 import React, { Component } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import prohibit from "../components/alarm/prohibit";
 
 function QA() {
     const [boardList, setBoardList] = useState([]);
@@ -14,6 +15,11 @@ function QA() {
     // wallet props 받아오기
     const location = useLocation();
     const walletInfo = { ...location.state };
+
+    // length가 0이면 undefined
+    if (Object.keys(walletInfo).length === 0) {
+        return prohibit();
+    }
 
     useEffect(() => {
         Axios.get("http://localhost:8000/list", {})

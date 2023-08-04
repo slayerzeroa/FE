@@ -5,11 +5,17 @@ import { NavLink, Link } from "react-router-dom";
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import prohibit from "../components/alarm/prohibit";
 
 const Auth = () => {
     // wallet props 받아오기
     const location = useLocation();
     const walletInfo = { ...location.state };
+
+    // length가 0이면 undefined
+    if (Object.keys(walletInfo).length === 0) {
+        return prohibit();
+    }
 
     const [allAgreed, setAllAgreed] = useState(false);
     const [agreements, setAgreements] = useState({
@@ -48,6 +54,7 @@ const Auth = () => {
             </div>
             <div className={styles.bodyWrapper}>
                 <div className={styles.body}>
+                    <div className={styles.bodyInner}></div>
                     <form>
                         <label>회원정보 입력 및 이용약관 동의</label>
                         <ul>

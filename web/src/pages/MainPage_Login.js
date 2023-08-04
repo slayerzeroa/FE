@@ -7,6 +7,7 @@ import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import styled from "styled-components";
+import prohibit from "../components/alarm/prohibit";
 
 const MainPage_Login = () => {
     const navigate = useNavigate();
@@ -15,10 +16,9 @@ const MainPage_Login = () => {
     const location = useLocation();
     const walletInfo = { ...location.state };
 
-    if (walletInfo === undefined) {
-        console.log("walletAddress is undefined");
-    } else {
-        console.log("walletAddress is defined");
+    // length가 0이면 undefined
+    if (Object.keys(walletInfo).length === 0) {
+        return prohibit();
     }
 
     const go_grad = () => {

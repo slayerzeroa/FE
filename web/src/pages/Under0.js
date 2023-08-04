@@ -1,15 +1,21 @@
 /* eslint-disable */
 
-import styles from "./Grad0.module.css";
+import styles from "./Under0.module.css";
 import { NavLink, Link } from "react-router-dom";
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import prohibit from "../components/alarm/prohibit";
 
 const Under0 = () => {
     // wallet props 받아오기
     const location = useLocation();
     const walletInfo = { ...location.state };
+
+    // length가 0이면 undefined
+    if (Object.keys(walletInfo).length === 0) {
+        return prohibit();
+    }
 
     return (
         <div className={styles.div}>
