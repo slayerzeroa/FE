@@ -105,14 +105,14 @@
     font-family: var(--font-dm-sans);
 }
 .sidebar {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background-color: var(--color-ghostwhite-100);
     border-bottom: 1px solid var(--color-royalblue-100);
     box-sizing: border-box;
     width: 100vw;
-    height: 13vh;
+    height: 10vh;
     padding: var(--padding-xl) var(--padding-21xl);
     gap: var(--gap-51xl);
     color: var(--color-dodgerblue-100);

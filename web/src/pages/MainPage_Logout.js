@@ -83,29 +83,6 @@ function MainPage_Logout() {
 
     return (
         <div className={styles.div}>
-            <div className={styles.sidebar}>
-                <NavLink to="/" style={{ textDecoration: "none" }}>
-                    <div className={styles.logo}>
-                        <img className={styles.icIcon} alt="" src="/ic.svg" />
-                        <div className={styles.linkAjou}>Link Ajou</div>
-                    </div>
-                </NavLink>
-                <div className={styles.nav} />
-                {/* <ConnectButton
-                    className={styles.compButton}
-                    isConnected={isConnected}
-                    connectWallet={connectWallet}
-                    walletAddress={walletAddress}
-                    currentBalance={currentBalance}
-                    chainId={chainId}
-                /> */}
-                <button className={styles.compButton} onClick={() => connectWallet()}>
-                    <b className={styles.text}>Connect</b>
-                </button>
-
-                <div>{walletAddress}</div>
-                <div>{currentBalance}</div>
-            </div>
             <div className={styles.body}>
                 <div className={styles.body1}>
                     <img className={styles.bgIcon} alt="" src="/bg1@2x.png" />
@@ -129,6 +106,30 @@ function MainPage_Logout() {
                     </b>
                 </div>
             </div>
+            <div className={styles.sidebar}>
+                <NavLink to="/" style={{ textDecoration: "none" }}>
+                    <div className={styles.logo}>
+                        <img className={styles.icIcon} alt="" src="/ic.svg" />
+                        <div className={styles.linkAjou}>Link Ajou</div>
+                    </div>
+                </NavLink>
+                <div className={styles.nav} />
+                {/* <ConnectButton
+                    className={styles.compButton}
+                    isConnected={isConnected}
+                    connectWallet={connectWallet}
+                    walletAddress={walletAddress}
+                    currentBalance={currentBalance}
+                    chainId={chainId}
+                /> */}
+                <button className={styles.compButton} onClick={() => connectWallet()}>
+                    <b className={styles.text}>Connect</b>
+                </button>
+
+                <div>{walletAddress}</div>
+                <div>{currentBalance}</div>
+            </div>
+            
         </div>
     );
 }

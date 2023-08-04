@@ -43,88 +43,7 @@ function QA() {
                     <img className={styles.iconarrowDown} alt="" src="/iconarrowdown.svg" />
                 </div>
             </div>
-            <div className={styles.sidebar}>
-                <NavLink
-                    state={{
-                        walletAddress: walletInfo.walletAddress,
-                        currentBalance: walletInfo.currentBalance,
-                        chainId: walletInfo.chainId,
-                    }}
-                    to="/main"
-                    style={{ textDecoration: "none" }}
-                >
-                    <div className={styles.logo}>
-                        <img className={styles.icIcon} alt="" src="/ic.svg" />
-                        <div className={styles.linkAjou}>Link Ajou</div>
-                    </div>
-                </NavLink>
-                <div className={styles.nav}>
-                    <Link
-                        state={{
-                            walletAddress: walletInfo.walletAddress,
-                            currentBalance: walletInfo.currentBalance,
-                            chainId: walletInfo.chainId,
-                        }}
-                        to="/grad1"
-                        style={{ textDecoration: "none", color: "var(--text-10)" }}
-                    >
-                        <div className={styles.menu}>
-                            <img className={styles.iconarrowDown} alt="" src="/iconelement3.svg" />
-                            <div className={styles.div}>나의 정보</div>
-                        </div>
-                    </Link>
-                    <Link
-                        state={{
-                            walletAddress: walletInfo.walletAddress,
-                            currentBalance: walletInfo.currentBalance,
-                            chainId: walletInfo.chainId,
-                        }}
-                        to="/grad2"
-                        style={{ textDecoration: "none", color: "var(--text-10)" }}
-                    >
-                        <div className={styles.menu}>
-                            <img className={styles.iconarrowDown} alt="" src="/iconcard.svg" />
-                            <div className={styles.div}>동문 데이터 분석</div>
-                        </div>
-                    </Link>
-                    <Link
-                        state={{
-                            walletAddress: walletInfo.walletAddress,
-                            currentBalance: walletInfo.currentBalance,
-                            chainId: walletInfo.chainId,
-                        }}
-                        to="/qa"
-                        style={{ textDecoration: "none", color: "var(--text-10)" }}
-                    >
-                        <div className={styles.menu2}>
-                            <div className={styles.menu}>
-                                <img className={styles.iconarrowDown} alt="" src="/icontransactionminus.svg" />
-                                <b className={styles.qa1}>{`Q&A`}</b>
-                            </div>
-                        </div>
-                    </Link>
-                    <Link
-                        state={{
-                            walletAddress: walletInfo.walletAddress,
-                            currentBalance: walletInfo.currentBalance,
-                            chainId: walletInfo.chainId,
-                        }}
-                        to="/grad3"
-                        style={{ textDecoration: "none", color: "var(--text-10)" }}
-                    >
-                        <div className={styles.menu}>
-                            <img className={styles.iconarrowDown} alt="" src="/iconactivity.svg" />
-                            <div className={styles.div}>토큰 환전</div>
-                        </div>
-                    </Link>
-                </div>
-                <div className={styles.iconGroup}>
-                    <img className={styles.icon} alt="" src="/icon.svg" />
-                    <div className={styles.avatar} />
-                    <div className={styles.adminA}>{walletInfo.walletAddress}</div>
-                    <img className={styles.iconarrowDown} alt="" src="/iconarrowdown.svg" />
-                </div>
-            </div>
+
             <div className={styles.bodyWrapper}>
                 <div className={styles.body}>
                     <div className={styles.groupWrapper}>
@@ -423,6 +342,89 @@ function QA() {
                     </Link>
                 </div>
             </div>
+            <div className={styles.sidebar}>
+                <NavLink
+                    state={{
+                        walletAddress: walletInfo.walletAddress,
+                        currentBalance: walletInfo.currentBalance,
+                        chainId: walletInfo.chainId,
+                    }}
+                    to="/main"
+                    style={{ textDecoration: "none" }}
+                >
+                    <div className={styles.logo}>
+                        <img className={styles.icIcon} alt="" src="/ic.svg" />
+                        <div className={styles.linkAjou}>Link Ajou</div>
+                    </div>
+                </NavLink>
+                <div className={styles.nav}>
+                    <Link
+                        state={{
+                            walletAddress: walletInfo.walletAddress,
+                            currentBalance: walletInfo.currentBalance,
+                            chainId: walletInfo.chainId,
+                        }}
+                        to="/grad1"
+                        style={{ textDecoration: "none", color: "var(--text-10)" }}
+                    >
+                        <div className={styles.menu}>
+                            <img className={styles.iconarrowDown} alt="" src="/iconelement3.svg" />
+                            <div className={styles.div}>나의 정보</div>
+                        </div>
+                    </Link>
+                    <Link
+                        state={{
+                            walletAddress: walletInfo.walletAddress,
+                            currentBalance: walletInfo.currentBalance,
+                            chainId: walletInfo.chainId,
+                        }}
+                        to="/grad2"
+                        style={{ textDecoration: "none", color: "var(--text-10)" }}
+                    >
+                        <div className={styles.menu}>
+                            <img className={styles.iconarrowDown} alt="" src="/iconcard.svg" />
+                            <div className={styles.div}>동문 데이터 분석</div>
+                        </div>
+                    </Link>
+                    <Link
+                        state={{
+                            walletAddress: walletInfo.walletAddress,
+                            currentBalance: walletInfo.currentBalance,
+                            chainId: walletInfo.chainId,
+                        }}
+                        to="/qa"
+                        style={{ textDecoration: "none", color: "var(--text-10)" }}
+                    >
+                        <div className={styles.menu2}>
+                            <div className={styles.menu}>
+                                <img className={styles.iconarrowDown} alt="" src="/icontransactionminus.svg" />
+                                <b className={styles.qa1}>{`Q&A`}</b>
+                            </div>
+                        </div>
+                    </Link>
+                    <Link
+                        state={{
+                            walletAddress: walletInfo.walletAddress,
+                            currentBalance: walletInfo.currentBalance,
+                            chainId: walletInfo.chainId,
+                        }}
+                        to="/grad3"
+                        style={{ textDecoration: "none", color: "var(--text-10)" }}
+                    >
+                        <div className={styles.menu}>
+                            <img className={styles.iconarrowDown} alt="" src="/iconactivity.svg" />
+                            <div className={styles.div}>토큰 환전</div>
+                        </div>
+                    </Link>
+                </div>
+                <div className={styles.iconGroup}>
+                    <img className={styles.icon} alt="" src="/icon.svg" />
+                    <div className={styles.avatar} />
+                    <div className={styles.adminA}>{walletInfo.walletAddress}</div>
+                    <img className={styles.iconarrowDown} alt="" src="/iconarrowdown.svg" />
+                </div>
+            </div>
+            
         </div>
     );
 }

@@ -383,6 +383,7 @@ const Under2 = () => {
                     <img className={styles.iconarrowDown} alt="" src="/iconarrowdown5.svg" />
                 </div>
             </div>
+            
         </div>
     );
 };

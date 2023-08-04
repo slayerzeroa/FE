@@ -20,6 +20,8 @@ import Under3 from "./pages/Under3";
 
 import Auth from "./pages/Auth";
 
+import NotFound from "./components/notfound";
+
 import { useEffect } from "react";
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -133,6 +135,9 @@ function App() {
 
             {/* 본인인증 페이지 */}
             <Route path="/auth" element={<Auth />} />
+
+            {/* 404 페이지 */}
+            <Route path={"*"} element={<NotFound />} />
         </Routes>
     );
 }
