@@ -8,6 +8,7 @@ import Axios from "axios";
 import React, { Component } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Button } from "react-bootstrap";
 
 function PostView() {
     const navigate = useNavigate();
@@ -168,9 +169,9 @@ function PostView() {
                                     ) : (
                                         "해당 게시글을 찾을 수 없습니다."
                                     )}
-                                    <button onClick={() => back()} className="post-view-go-list-btn">
+                                    <Button onClick={() => back()} className="post-view-go-list-btn">
                                         목록으로 돌아가기
-                                    </button>
+                                    </Button>
                                 </div>
                             </>
                         </div>
