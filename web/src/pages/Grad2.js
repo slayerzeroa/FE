@@ -227,6 +227,7 @@ const Grad2 = () => {
                     <img className={styles.iconcard} alt="" src="/iconarrowdown.svg" />
                 </div>
             </div>
+            
         </div>
     );
 };

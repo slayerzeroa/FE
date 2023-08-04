@@ -53,6 +53,33 @@ const MainPage_Login = () => {
 
     return (
         <div className={styles.div}>
+            <div className={styles.body}>
+                <div className={styles.body1}>
+                    <img className={styles.bgIcon} alt="" src="/bg1@2x.png" />
+                    <div className={styles.lH}>
+                        <div onClick={go_under} style={{ textDecoration: "none" }}>
+                            <button className={styles.compButton}>
+                                <div className={styles.text}>재학생</div>
+                            </button>
+                        </div>
+                        <div onClick={go_grad} style={{ textDecoration: "none" }}>
+                            <button className={styles.compButton}>
+                                <div className={styles.text}>졸업생</div>
+                            </button>
+                        </div>
+                        <div onClick={go_auth} style={{ textDecoration: "none" }}>
+                            <button className={styles.compButton}>
+                                <div className={styles.text}>재학생/졸업생</div>
+                                <div className={styles.text}>인증하기</div>
+                            </button>
+                        </div>
+                    </div>
+                    <b className={styles.title}>
+                        <p className={styles.p}>LINK AJOU</p>
+                        <p className={styles.p}>졸업생과 재학생의 만남</p>
+                    </b>
+                </div>
+            </div>
             <div className={styles.sidebar}>
                 <NavLink
                     state={{
@@ -94,33 +121,7 @@ const MainPage_Login = () => {
                     <img className={styles.iconcard} alt="" src="/iconarrowdown1.svg" />
                 </div>
             </div>
-            <div className={styles.body}>
-                <div className={styles.body1}>
-                    <img className={styles.bgIcon} alt="" src="/bg1@2x.png" />
-                    <div className={styles.lH}>
-                        <div onClick={go_under} style={{ textDecoration: "none" }}>
-                            <button className={styles.compButton}>
-                                <div className={styles.text}>재학생</div>
-                            </button>
-                        </div>
-                        <div onClick={go_grad} style={{ textDecoration: "none" }}>
-                            <button className={styles.compButton}>
-                                <div className={styles.text}>졸업생</div>
-                            </button>
-                        </div>
-                        <div onClick={go_auth} style={{ textDecoration: "none" }}>
-                            <button className={styles.compButton}>
-                                <div className={styles.text}>재학생/졸업생</div>
-                                <div className={styles.text}>인증하기</div>
-                            </button>
-                        </div>
-                    </div>
-                    <b className={styles.title}>
-                        <p className={styles.p}>LINK AJOU</p>
-                        <p className={styles.p}>졸업생과 재학생의 만남</p>
-                    </b>
-                </div>
-            </div>
+            <footer className={styles.footer}>Made by Ajou Univ. Financial Engineering</footer>
         </div>
     );
 };

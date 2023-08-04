@@ -121,6 +121,7 @@ const Grad0 = () => {
                     <img className={styles.iconarrowDown} alt="" src="/iconarrowdown1.svg" />
                 </div>
             </div>
+            
         </div>
     );
 };
