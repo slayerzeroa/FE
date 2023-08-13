@@ -9,6 +9,10 @@ import Axios from "axios";
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import prohibit from "../components/alarm/prohibit";
+import Col from "react-bootstrap/Col";
+import Nav from "react-bootstrap/Nav";
+import Row from "react-bootstrap/Row";
+import Tab from "react-bootstrap/Tab";
 
 const Majoroptions = [
     { value: "금융공학과", label: "금융공학과" },
@@ -51,13 +55,14 @@ const customStyles = {
 };
 
 const Grad2 = () => {
-    const [users, setUsers] = useState([]);
+    const [GPA, setGPA] = useState([]);
     const [showChart, setShowChart] = useState(false);
 
+    // 동문 데이터 분석 - gpa
     useEffect(() => {
-        Axios.get("http://localhost:8000/graduate", {})
+        Axios.get("http://localhost:8000/gpa", {})
             .then((res) => {
-                setUsers(res);
+                setGPA(res);
                 console.log(res.data);
             })
             .catch((Error) => {
@@ -124,21 +129,110 @@ const Grad2 = () => {
                     <div className={styles.compParent}>
                         <div className={styles.comp}>
                             {showChart && (
-                                <div>
-                                    <Chart
-                                        className={styles.value}
-                                        type="bar"
-                                        series={[
-                                            {
-                                                name: "series1",
-                                                data: users?.data?.map((user) => user.gpa),
-                                            },
-                                        ]}
-                                        options={{ chart: { height: 1200, width: 800 } }}
-                                    ></Chart>
-                                </div>
+                                //left tab 추가
+
+                                // <div>
+                                //     <Chart
+                                //         className={styles.value}
+                                //         type="pie"
+                                //         series={GPA?.data?.map((GPA) => GPA.count)}
+                                //         options={{
+                                //             labels: GPA?.data?.map((GPA) => GPA.rounded_gpa),
+                                //             chart: { height: 1200, width: 800 },
+                                //         }}
+                                //     ></Chart>
+                                // </div>
+
+                                <Tab.Container
+                                    className={styles.tabcontainer}
+                                    id="left-tabs-example"
+                                    defaultActiveKey="first"
+                                >
+                                    <Row>
+                                        <Col className={styles.tabitems} sm={9}>
+                                            <Tab.Content>
+                                                <Tab.Pane eventKey="first">
+                                                    <Chart
+                                                        className={styles.valuePie}
+                                                        type="pie"
+                                                        series={GPA?.data?.map((GPA) => GPA.count)}
+                                                        options={{
+                                                            labels: GPA?.data?.map((GPA) => GPA.rounded_gpa),
+                                                            chart: { height: 1200, width: 800 },
+                                                        }}
+                                                    ></Chart>
+                                                </Tab.Pane>
+                                                <Tab.Pane eventKey="second">
+                                                    <Chart
+                                                        className={styles.valueBar}
+                                                        type="bar"
+                                                        series={[
+                                                            {
+                                                                name: "series1",
+                                                                data: GPA?.data?.map((GPA) => GPA.count),
+                                                            },
+                                                        ]}
+                                                        options={{ chart: { height: 1200, width: 800 } }}
+                                                    ></Chart>
+                                                </Tab.Pane>
+                                                <Tab.Pane eventKey="three">
+                                                    <Chart
+                                                        className={styles.valueBar}
+                                                        type="bar"
+                                                        series={[
+                                                            {
+                                                                name: "series1",
+                                                                data: GPA?.data?.map((GPA) => GPA.count),
+                                                            },
+                                                        ]}
+                                                        options={{ chart: { height: 1200, width: 800 } }}
+                                                    ></Chart>
+                                                </Tab.Pane>
+                                                <Tab.Pane eventKey="four">
+                                                    <Chart
+                                                        className={styles.valueBar}
+                                                        type="bar"
+                                                        series={[
+                                                            {
+                                                                name: "series1",
+                                                                data: GPA?.data?.map((GPA) => GPA.count),
+                                                            },
+                                                        ]}
+                                                        options={{ chart: { height: 1200, width: 800 } }}
+                                                    ></Chart>
+                                                </Tab.Pane>
+                                            </Tab.Content>
+                                        </Col>
+                                    </Row>
+                                    <Col className={styles.tabcolumns} sm={3}>
+                                        <Nav variant="pills" className="flex-column">
+                                            <Nav.Item>
+                                                <Nav.Link eventKey="first">GPA</Nav.Link>
+                                            </Nav.Item>
+                                            <Nav.Item>
+                                                <Nav.Link eventKey="second">Intern</Nav.Link>
+                                            </Nav.Item>
+                                            <Nav.Item>
+                                                <Nav.Link eventKey="three">External</Nav.Link>
+                                            </Nav.Item>
+                                            <Nav.Item>
+                                                <Nav.Link eventKey="four">Society</Nav.Link>
+                                            </Nav.Item>
+                                            <Nav.Item>
+                                                <Nav.Link eventKey="five">Certificate</Nav.Link>
+                                            </Nav.Item>
+                                            <Nav.Item>
+                                                <Nav.Link eventKey="six">Competition</Nav.Link>
+                                            </Nav.Item>
+                                            <Nav.Item>
+                                                <Nav.Link eventKey="seven">Gender</Nav.Link>
+                                            </Nav.Item>
+                                        </Nav>
+                                    </Col>
+                                </Tab.Container>
                             )}
                         </div>
+
                         <div className={styles.comp1}>
                             <b className={styles.text4}>통계 분석값을 Text로 넣을 수 있는 공간</b>
                         </div>
@@ -227,7 +321,6 @@ const Grad2 = () => {
                     <img className={styles.iconcard} alt="" src="/iconarrowdown.svg" />
                 </div>
             </div>
-            
         </div>
     );
 };

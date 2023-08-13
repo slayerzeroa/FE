@@ -42,8 +42,18 @@ app.get("/list", (req, res) => {
   });
 });
 
+// GPA 코드
+app.get("/gpa", (req, res) => {
+  const sqlQuery =
+    "SELECT FLOOR(gpa) AS rounded_gpa, COUNT(*) AS count FROM GRADUATE GROUP BY rounded_gpa;";
+  db.query(sqlQuery, (err, result) => {
+    res.send(result);
+  });
+});
+
+// Graduate 코드
 app.get("/graduate", (req, res) => {
-  const sqlQuery = "SELECT *FROM GRADUATE;";
+  const sqlQuery = "SELECT * FROM GRADUATE;";
   db.query(sqlQuery, (err, result) => {
     res.send(result);
   });
