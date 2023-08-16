@@ -74,7 +74,7 @@ contract status is PompayToken("AJOU", "AJ"){
         //지갑 소유자(to)의 balance 값 Update
         getInfoByWallet[to].balance = balanceOf(to);
         //balance 값 Update 후, ipfs 상에서도 새로 Update -- 임시로 닫음
-        // uploadStudentInfoToIPFS(to);
+        uploadStudentInfoToIPFS(to);
         return true;
     }
 
