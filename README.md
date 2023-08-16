@@ -43,3 +43,6 @@ ex. Deploy한 PompayToken 컨트랙트 주소 : 0xd9145CCE52D386f254917e481eB44e
 ![image](https://github.com/slayerzeroa/FE/assets/77741158/9eb0c22a-f062-4516-b7c6-5252e7bf3a91)
 
 ex. Deploy한 status 컨트랙트 주소 : 0xd8b934580fcE35a11B58C6D73aDeE468a2833fa8
+
+
+※ EtherSwap 컨트랙트의 경우 - ETH와 AJOU 토큰을 Deploy한 후 충분히 넣어줘야, Swap 진행하기 용이함.
