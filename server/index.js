@@ -9,10 +9,10 @@ const app = express();
 
 // db 설정
 const db = mysql.createPool({
-  host: "localhost",
-  user: "root",
-  password: "1234",
-  database: "test",
+  host: "mechmedic.iptime.org",
+  user: "Ajou",
+  password: "Trading408",
+  database: "linka",
 });
 
 app.use(
@@ -34,18 +34,18 @@ app.listen(PORT, () => {
   console.log(`running on port ${PORT}`);
 });
 
-// 게시판 코드
-app.get("/list", (req, res) => {
-  const sqlQuery = "SELECT *FROM BOARD;";
-  db.query(sqlQuery, (err, result) => {
-    res.send(result);
-  });
-});
+// // 게시판 코드
+// app.get("/list", (req, res) => {
+//   const sqlQuery = "SELECT * FROM BOARD;";
+//   db.query(sqlQuery, (err, result) => {
+//     res.send(result);
+//   });
+// });
 
 // GPA 코드
 app.get("/gpa", (req, res) => {
   const sqlQuery =
-    "SELECT FLOOR(gpa) AS rounded_gpa, COUNT(*) AS count FROM GRADUATE GROUP BY rounded_gpa;";
+    "SELECT FLOOR(gpa) AS rounded_gpa, COUNT(*) AS count FROM privacy GROUP BY rounded_gpa;";
   db.query(sqlQuery, (err, result) => {
     res.send(result);
   });
@@ -53,7 +53,7 @@ app.get("/gpa", (req, res) => {
 
 // Graduate 코드
 app.get("/graduate", (req, res) => {
-  const sqlQuery = "SELECT * FROM GRADUATE;";
+  const sqlQuery = "SELECT * FROM privacy;";
   db.query(sqlQuery, (err, result) => {
     res.send(result);
   });
