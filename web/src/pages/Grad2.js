@@ -60,7 +60,7 @@ const Grad2 = () => {
 
     // 동문 데이터 분석 - gpa
     useEffect(() => {
-        Axios.get("https://ajoufeserver.shop/graduate", {})
+        Axios.get("https://ajoufeserver.shop/gpa", {})
             .then((res) => {
                 setGPA(res);
                 console.log(res.data);
