@@ -60,7 +60,7 @@ const Grad2 = () => {
 
     // 동문 데이터 분석 - gpa
     useEffect(() => {
-        Axios.get("http://localhost:8000/gpa", {})
+        Axios.get("http://ec2-3-39-10-110.ap-northeast-2.compute.amazonaws.com:8000/graduate", {})
             .then((res) => {
                 setGPA(res);
                 console.log(res.data);
