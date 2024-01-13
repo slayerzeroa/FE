@@ -368,7 +368,7 @@ function QA() {
                     >
                         <div className={styles.menu}>
                             <img className={styles.iconarrowDown} alt="" src="/iconelement3.svg" />
-                            <div className={styles.div}>졸업생 데이터 분석</div>
+                            <div className={styles.div1}>졸업생 데이터 분석</div>
                         </div>
                     </Link>
                     <Link
@@ -382,7 +382,7 @@ function QA() {
                     >
                         <div className={styles.menu}>
                             <img className={styles.iconarrowDown} alt="" src="/iconcard.svg" />
-                            <div className={styles.div}>맞춤형 활동 추천</div>
+                            <div className={styles.div1}>맞춤형 활동 추천</div>
                         </div>
                     </Link>
                     <Link
@@ -397,7 +397,7 @@ function QA() {
                         <div className={styles.menu2}>
                             <div className={styles.menu}>
                                 <img className={styles.iconarrowDown} alt="" src="/icontransactionminus.svg" />
-                                <b className={styles.qa1}>{`Q&A`}</b>
+                                <b className={styles.div1}>{`Q&A`}</b>
                             </div>
                         </div>
                     </Link>
@@ -412,7 +412,7 @@ function QA() {
                     >
                         <div className={styles.menu}>
                             <img className={styles.iconarrowDown} alt="" src="/iconactivity.svg" />
-                            <div className={styles.div}>토큰 환전</div>
+                            <div className={styles.div1}>토큰 환전</div>
                         </div>
                     </Link>
                 </div>
@@ -423,7 +423,6 @@ function QA() {
                     <img className={styles.iconarrowDown} alt="" src="/iconarrowdown.svg" />
                 </div>
             </div>
-            
         </div>
     );
 }

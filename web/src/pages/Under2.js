@@ -328,7 +328,7 @@ const Under2 = () => {
                     >
                         <div className={styles.menu}>
                             <img className={styles.iconarrowDown} alt="" src="/iconelement3.svg" />
-                            <div className={styles.div53}>졸업생 데이터 분석</div>
+                            <div className={styles.div1}>졸업생 데이터 분석</div>
                         </div>
                     </Link>
                     <Link
@@ -342,7 +342,7 @@ const Under2 = () => {
                     >
                         <div className={styles.menu1}>
                             <img className={styles.iconarrowDown} alt="" src="/iconcard1.svg" />
-                            <div className={styles.div53}>맞춤형 활동 추천</div>
+                            <div className={styles.div1}>맞춤형 활동 추천</div>
                         </div>
                     </Link>
                     <Link
@@ -357,7 +357,7 @@ const Under2 = () => {
                         <div className={styles.menu2}>
                             <div className={styles.menu}>
                                 <img className={styles.iconarrowDown} alt="" src="/icontransactionminus1.svg" />
-                                <b className={styles.qa}>{`Q&A`}</b>
+                                <b className={styles.div1}>{`Q&A`}</b>
                             </div>
                         </div>
                     </Link>
@@ -372,7 +372,7 @@ const Under2 = () => {
                     >
                         <div className={styles.menu}>
                             <img className={styles.iconarrowDown} alt="" src="/iconactivity.svg" />
-                            <div className={styles.div53}>토큰 환전</div>
+                            <div className={styles.div1}>토큰 환전</div>
                         </div>
                     </Link>
                 </div>
@@ -383,7 +383,6 @@ const Under2 = () => {
                     <img className={styles.iconarrowDown} alt="" src="/iconarrowdown5.svg" />
                 </div>
             </div>
-            
         </div>
     );
 };

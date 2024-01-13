@@ -59,18 +59,25 @@ const MainPage_Login = () => {
                     <div className={styles.lH}>
                         <div onClick={go_under} style={{ textDecoration: "none" }}>
                             <button className={styles.compButton}>
-                                <div className={styles.text}>재학생</div>
+                                <div className={styles.text}>
+                                    <p className={styles.p1}>재학생</p>
+                                </div>
                             </button>
                         </div>
                         <div onClick={go_grad} style={{ textDecoration: "none" }}>
                             <button className={styles.compButton}>
-                                <div className={styles.text}>졸업생</div>
+                                <div className={styles.text}>
+                                    <p className={styles.p1}>졸업생</p>
+                                </div>
                             </button>
                         </div>
                         <div onClick={go_auth} style={{ textDecoration: "none" }}>
                             <button className={styles.compButton}>
-                                <div className={styles.text}>재학생/졸업생</div>
-                                <div className={styles.text}>인증하기</div>
+                                <div className={styles.text}>
+                                    <p className={styles.p1}>
+                                        재학생/졸업생 <br /> 인증하기
+                                    </p>
+                                </div>
                             </button>
                         </div>
                     </div>

@@ -471,3 +471,212 @@
     justify-content: flex-start;
     gap: var(--gap-41xl);
 }
+
+/* 덧붙이기 */
+
+.icon {
+    width: 24px;
+    height: 24px;
+}
+.iconbell {
+    width: 40px;
+    height: 40px;
+}
+.adminA,
+.avatar,
+.icon {
+    position: relative;
+}
+.avatar {
+    border-radius: var(--br-5xs);
+    background-color: var(--stroke);
+    width: 40px;
+    height: 40px;
+}
+.adminA {
+    font-weight: 500;
+    font-size: var(--font-size-sm);
+}
+.iconarrowDown {
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+.iconParent,
+.inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.iconParent {
+    justify-content: center;
+    gap: var(--gap-mid);
+}
+.inner {
+    position: absolute;
+    top: 0;
+    left: 270px;
+    background-color: var(--color-white);
+    width: 1650px;
+    height: 90px;
+    padding: 0 var(--padding-61xl);
+    box-sizing: border-box;
+    justify-content: flex-end;
+}
+.body {
+    align-self: stretch;
+    flex: 1;
+    border-radius: var(--br-3xs);
+    background-color: var(--color-ghostwhite-100);
+    border: 1px solid var(--stroke);
+}
+.bodyWrapper {
+    position: absolute;
+    top: 10vh;
+    left: 0;
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding-61xl);
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+}
+.icIcon {
+    position: relative;
+    width: 27.78px;
+    height: 26.81px;
+}
+.linkAjou {
+    position: relative;
+    letter-spacing: -0.05em;
+    font-weight: 900;
+}
+.logo {
+    display: flex;
+    flex-direction: row;
+    padding: var(--padding-11xs) 0;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--gap-3xs);
+}
+.div1 {
+    position: relative;
+    letter-spacing: -1px;
+    font-weight: 500;
+}
+.menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--gap-3xs);
+}
+.qa {
+    position: relative;
+    letter-spacing: -1px;
+}
+.menu2 {
+    align-items: center;
+    justify-content: flex-start;
+}
+.iconGroup,
+.menu2,
+.nav {
+    display: flex;
+    flex-direction: row;
+}
+.nav {
+    flex: 1;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--gap-11xl);
+    color: var(--text-10);
+    font-family: var(--font-spoqa-han-sans-neo);
+}
+.iconGroup {
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-mid);
+    color: var(--text-100);
+    font-family: var(--font-dm-sans);
+}
+.div,
+.sidebar {
+    box-sizing: border-box;
+}
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--color-ghostwhite-100);
+    border-bottom: 1px solid var(--color-royalblue-100);
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    padding: var(--padding-xl) var(--padding-21xl);
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-51xl);
+    color: var(--color-dodgerblue-100);
+    font-family: var(--font-roboto);
+}
+.div {
+    position: relative;
+    border-radius: var(--br-3xs);
+    background-color: var(--color-white);
+    border: 3px solid var(--color-cornflowerblue);
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    text-align: left;
+    font-size: var(--font-size-sm);
+    color: var(--text-100);
+    font-family: var(--font-dm-sans);
+}
+@media screen and (max-width: 1024px) {
+    .inner {
+        left: 0;
+        width: 100vw;
+        height: 90px;
+        padding: 0 var(--padding-41xl);
+    }
+    .bodyWrapper {
+        top: 10vh;
+        left: 0;
+        width: 100vw;
+        height: 90vh;
+        padding: var(--padding-41xl);
+    }
+    .sidebar {
+        left: 0;
+        width: 100vw;
+        height: 10vh;
+        padding: var(--padding-21xl);
+    }
+    .div {
+        border: none;
+        width: 100vw;
+        height: 100vh;
+    }
+    .icon {
+        width: 18px;
+        height: 18px;
+    }
+    .div1 {
+        font-size: 10px;
+    }
+    .iconbell {
+        width: 30px;
+        height: 30px;
+    }
+    .avatar {
+        width: 30px;
+        height: 30px;
+    }
+    .adminA {
+        font-size: 5px;
+    }
+}

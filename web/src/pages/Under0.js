@@ -19,14 +19,6 @@ const Under0 = () => {
 
     return (
         <div className={styles.div}>
-            <div className={styles.inner}>
-                <div className={styles.iconParent}>
-                    <img className={styles.icon} alt="" src="/icon1.svg" />
-                    <div className={styles.avatar} />
-                    <div className={styles.adminA}>{walletInfo.walletAddress}</div>
-                    <img className={styles.iconarrowDown} alt="" src="/iconarrowdown1.svg" />
-                </div>
-            </div>
             <div className={styles.bodyWrapper}>
                 <div className={styles.body} />
             </div>
@@ -56,7 +48,7 @@ const Under0 = () => {
                         style={{ textDecoration: "none", color: "var(--text-10)" }}
                     >
                         <div className={styles.menu}>
-                            <img className={styles.iconarrowDown} alt="" src="/iconelement3.svg" />
+                            <img className={styles.icon} alt="" src="/iconelement3.svg" />
                             <div className={styles.div1}>졸업생 데이터 분석</div>
                         </div>
                     </Link>
@@ -70,7 +62,7 @@ const Under0 = () => {
                         style={{ textDecoration: "none", color: "var(--text-10)" }}
                     >
                         <div className={styles.menu}>
-                            <img className={styles.iconarrowDown} alt="" src="/iconcard.svg" />
+                            <img className={styles.icon} alt="" src="/iconcard.svg" />
                             <div className={styles.div1}>맞춤형 활동 추천</div>
                         </div>
                     </Link>
@@ -85,8 +77,8 @@ const Under0 = () => {
                     >
                         <div className={styles.menu2}>
                             <div className={styles.menu}>
-                                <img className={styles.iconarrowDown} alt="" src="/icontransactionminus1.svg" />
-                                <b className={styles.qa}>{`Q&A`}</b>
+                                <img className={styles.icon} alt="" src="/icontransactionminus1.svg" />
+                                <b className={styles.div1}>{`Q&A`}</b>
                             </div>
                         </div>
                     </Link>
@@ -100,19 +92,18 @@ const Under0 = () => {
                         style={{ textDecoration: "none", color: "var(--text-10)" }}
                     >
                         <div className={styles.menu}>
-                            <img className={styles.iconarrowDown} alt="" src="/iconactivity.svg" />
+                            <img className={styles.icon} alt="" src="/iconactivity.svg" />
                             <div className={styles.div1}>토큰 환전</div>
                         </div>
                     </Link>
                 </div>
                 <div className={styles.iconGroup}>
-                    <img className={styles.icon} alt="" src="/icon1.svg" />
+                    <img className={styles.iconbell} alt="" src="/icon1.svg" />
                     <div className={styles.avatar} />
                     <div className={styles.adminA}>{walletInfo.walletAddress}</div>
                     <img className={styles.iconarrowDown} alt="" src="/iconarrowdown1.svg" />
                 </div>
             </div>
-            
         </div>
     );
 };

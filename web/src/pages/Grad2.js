@@ -60,7 +60,8 @@ const Grad2 = () => {
 
     // 동문 데이터 분석 - gpa
     useEffect(() => {
-        Axios.get("https://ajoufeserver.shop/gpa", {})
+        // Axios.get("https://ajoufeserver.shop/gpa", {})
+        Axios.get("http://localhost:8000/gpa", {})
             .then((res) => {
                 setGPA(res);
                 console.log(res.data);
@@ -265,7 +266,7 @@ const Grad2 = () => {
                         style={{ textDecoration: "none", color: "var(--text-10)" }}
                     >
                         <div className={styles.menu}>
-                            <img className={styles.iconcard} alt="" src="/iconelement3.svg" />
+                            <img className={styles.icon} alt="" src="/iconelement3.svg" />
                             <div className={styles.div1}>나의 정보</div>
                         </div>
                     </Link>
@@ -279,7 +280,7 @@ const Grad2 = () => {
                         style={{ textDecoration: "none", color: "var(--text-10)" }}
                     >
                         <div className={styles.menu1}>
-                            <img className={styles.iconcard} alt="" src="/iconcard1.svg" />
+                            <img className={styles.icon} alt="" src="/iconcard1.svg" />
                             <div className={styles.div1}>동문 데이터 분석</div>
                         </div>
                     </Link>
@@ -294,8 +295,8 @@ const Grad2 = () => {
                     >
                         <div className={styles.menu2}>
                             <div className={styles.menu}>
-                                <img className={styles.iconcard} alt="" src="/icontransactionminus1.svg" />
-                                <b className={styles.qa}>{`Q&A`}</b>
+                                <img className={styles.icon} alt="" src="/icontransactionminus1.svg" />
+                                <b className={styles.div1}>{`Q&A`}</b>
                             </div>
                         </div>
                     </Link>
@@ -309,7 +310,7 @@ const Grad2 = () => {
                         style={{ textDecoration: "none", color: "var(--text-10)" }}
                     >
                         <div className={styles.menu}>
-                            <img className={styles.iconcard} alt="" src="/iconactivity.svg" />
+                            <img className={styles.icon} alt="" src="/iconactivity.svg" />
                             <div className={styles.div1}>토큰 환전</div>
                         </div>
                     </Link>
@@ -318,7 +319,7 @@ const Grad2 = () => {
                     <img className={styles.icon} alt="" src="/icon.svg" />
                     <div className={styles.avatar} />
                     <div className={styles.adminA}>{walletInfo.walletAddress}</div>
-                    <img className={styles.iconcard} alt="" src="/iconarrowdown.svg" />
+                    <img className={styles.icon} alt="" src="/iconarrowdown.svg" />
                 </div>
             </div>
         </div>

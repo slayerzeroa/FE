@@ -66,22 +66,22 @@ app.listen(PORT, () => {
 //   });
 // });
 
-// GPA 코드
-app.get("/gpa", (req, res) => {
-  const sqlQuery =
-    "SELECT FLOOR(gpa) AS rounded_gpa, COUNT(*) AS count FROM privacy GROUP BY rounded_gpa;";
-  db.query(sqlQuery, (err, result) => {
-    res.send(result);
-  });
-});
+// // GPA 코드 (교수님 NAS DB)
+// app.get("/gpa", (req, res) => {
+//   const sqlQuery =
+//     "SELECT FLOOR(gpa) AS rounded_gpa, COUNT(*) AS count FROM privacy GROUP BY rounded_gpa;";
+//   db.query(sqlQuery, (err, result) => {
+//     res.send(result);
+//   });
+// });
 
-// Graduate 코드
-app.get("/graduate", (req, res) => {
-  const sqlQuery = "SELECT * FROM privacy;";
-  db.query(sqlQuery, (err, result) => {
-    res.send(result);
-  });
-});
+// // Graduate 코드 (교수님 NAS DB)
+// app.get("/graduate", (req, res) => {
+//   const sqlQuery = "SELECT * FROM privacy;";
+//   db.query(sqlQuery, (err, result) => {
+//     res.send(result);
+//   });
+// });
 
 // // cors 허용해주는 코드 작성
 
@@ -92,3 +92,30 @@ app.get("/graduate", (req, res) => {
 
 // // app.use(cors({ credentials: true, origin: "http://localhost:3000/qa" }));
 // app.use(cors(corsOptions));
+
+// GPA 코드
+app.get("/gpa", (req, res) => {
+  const sqlQuery =
+    "SELECT FLOOR(gpa) AS rounded_gpa, COUNT(*) AS count FROM GRADUATE GROUP BY rounded_gpa;";
+  db.query(sqlQuery, (err, result) => {
+    res.send(result);
+  });
+});
+
+// Graduate 코드
+app.get("/graduate", (req, res) => {
+  const sqlQuery = "SELECT * FROM GRADUATE;";
+  db.query(sqlQuery, (err, result) => {
+    res.send(result);
+  });
+});
+
+// submit 데이터 저장 코드
+app.post("/submit", (req, res) => {
+  const data = req.body;
+  console.log(data);
+  const sqlQuery = "INSERT INTO requested (rowno) VALUES (1)";
+  db.query(sqlQuery, (err, result) => {
+    res.send("success!");
+  });
+});
