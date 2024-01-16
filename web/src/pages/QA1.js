@@ -22,7 +22,7 @@ function QA() {
     }
 
     useEffect(() => {
-        Axios.get("http://localhost:8000/list", {})
+        Axios.get("http://ajoufe.synology.me:8000/list", {})
             .then((res) => {
                 setBoardList(res.data);
                 console.log(res.data);

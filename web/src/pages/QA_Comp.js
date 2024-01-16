@@ -6,7 +6,7 @@ import Axios from "axios";
 import React, { Component } from "react";
 // import { Button } from "react-bootstrap";
 const submitTest = () => {
-    Axios.get("http://localhost:8000/", {}).then(() => {
+    Axios.get("http://ajoufe.synology.me:8000/", {}).then(() => {
         alert("등록 완료!");
     });
 };

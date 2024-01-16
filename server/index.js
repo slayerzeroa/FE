@@ -7,37 +7,33 @@ const PORT = process.env.port || 8000;
 
 const app = express();
 
-// // 교수님 NAS db 설정
-// // db environment 받아오기 (보안 위해 .env 폴더로 따로 관리)
+// NAS db 설정
+// db environment 받아오기 (보안 위해 .env 폴더로 따로 관리)
 
-// const fs = require("fs");
+const fs = require("fs");
 
-// fs.readFile(
-//   "C:/Users/slaye/OneDrive/Desktop/FE_SERVER/env/FE_ENV.txt",
-//   "utf8",
-//   (err, data) => {
-//     if (err) {
-//       console.error(err);
-//       return;
-//     }
-//     const db_env = data.split("\n");
-//   }
-// );
-
-// const db = mysql.createPool({
-//   host: db_env[0],
-//   user: db_env[1],
-//   password: db_env[2],
-//   database: db_env[3],
-// });
-
-// 로컬 db 설정
-const db = mysql.createPool({
-  host: "localhost",
-  user: "root",
-  password: "1234",
-  database: "test",
+fs.readFile("/volume1/docker/ajoufe/FE_ENV.txt", "utf8", (err, data) => {
+  if (err) {
+    console.error(err);
+    return;
+  }
+  const db_env = data.split("\n");
 });
+
+const db = mysql.createPool({
+  host: db_env[0],
+  user: db_env[1],
+  password: db_env[2],
+  database: db_env[3],
+});
+
+// // 로컬 db 설정
+// const db = mysql.createPool({
+//   host: "localhost",
+//   user: "root",
+//   password: "1234",
+//   database: "test",
+// });
 
 app.use(
   cors({

@@ -67,8 +67,7 @@ const Under1 = () => {
     const [GPA, setGPA] = useState([]);
     const [showChart, setShowChart] = useState(false);
     useEffect(() => {
-        // Axios.get("https://ajoufeserver.shop/gpa", {})
-        Axios.get("http://localhost:8000/gpa", {})
+        Axios.get("", {})
             .then((res) => {
                 setGPA(res);
                 console.log(res.data);

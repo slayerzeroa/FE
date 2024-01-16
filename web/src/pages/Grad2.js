@@ -61,7 +61,7 @@ const Grad2 = () => {
     // 동문 데이터 분석 - gpa
     useEffect(() => {
         // Axios.get("https://ajoufeserver.shop/gpa", {})
-        Axios.get("http://localhost:8000/gpa", {})
+        Axios.get("http://ajoufe.synology.me:8000/gpa", {})
             .then((res) => {
                 setGPA(res);
                 console.log(res.data);

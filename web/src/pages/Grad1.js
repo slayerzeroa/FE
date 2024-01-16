@@ -167,8 +167,8 @@ const Grad1 = () => {
             // volunteer: volunteer,
         };
         console.log(data);
-        const res = await Axios.post("http://localhost:8000/submit", data);
-        const url = "http://localhost:8000/submit";
+        const res = await Axios.post("http://ajoufe.synology.me:8000/submit", data);
+        const url = "http://ajoufe.synology.me:8000/submit";
 
         fetch(url, {
             method: "POST",
