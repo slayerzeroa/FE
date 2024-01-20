@@ -41,12 +41,12 @@ const Grad3 = () => {
                                 </div>
                             </div>
                             <div className={styles.nodeFrame}>
-                                <div className={styles.node}>89,8333</div>
+                                <div className={styles.node}>\  89,833</div>
                             </div>
                         </div>
                         <div className={styles.listview1}>
                             <div className={styles.nodeContainer}>
-                                <div className={styles.node3}>
+                                <div className={styles.node1}>
                                     <div className={styles.myToken}>수익률</div>
                                 </div>
                             </div>
@@ -66,36 +66,36 @@ const Grad3 = () => {
                                 </div>
                             </div>
                             <div className={styles.nodeWrapper2}>
-                                <div className={styles.node}>Token 0,0101626</div>
+                                <div className={styles.node}>1626 AJ</div>
                             </div>
                         </div>
                         <div className={styles.listview1}>
                             <div className={styles.nodeContainer}>
-                                <div className={styles.node7}>
+                                <div className={styles.node1}>
                                     <div className={styles.myToken}>My ETH</div>
                                 </div>
                             </div>
                             <div className={styles.nodeWrapper4}>
-                                <div className={styles.node}>ETH 0,01283</div>
+                                <div className={styles.node}>0.01283 ETH</div>
                             </div>
                         </div>
                         <div className={styles.listview1}>
                             <div className={styles.nodeContainer}>
-                                <div className={styles.node9}>
-                                    <div className={styles.myToken}>1 토큰당 이더리움</div>
+                                <div className={styles.node1}>
+                                    <div className={styles.myToken}>토큰당 이더리움</div>
                                 </div>
                             </div>
-                            <div className={styles.nodeWrapper6}>
+                            <div className={styles.nodeWrapper4}>
                                 <div className={styles.node}>0.8444 ETH</div>
                             </div>
                         </div>
                         <div className={styles.listview1}>
                             <div className={styles.nodeContainer}>
-                                <div className={styles.node3}>
+                                <div className={styles.node1}>
                                     <div className={styles.myToken}>수수료</div>
                                 </div>
                             </div>
-                            <div className={styles.nodeWrapper8}>
+                            <div className={styles.nodeWrapper4}>
                                 <div className={styles.node}>0.111 ETH</div>
                             </div>
                         </div>
@@ -188,8 +188,8 @@ const Grad3 = () => {
                         style={{ textDecoration: "none", color: "var(--text-10)" }}
                     >
                         <div className={styles.menu}>
-                            <img className={styles.iconcard} alt="" src="/iconelement3.svg" />
-                            <div className={styles.div7}>나의 정보</div>
+                            <img className={styles.icon} alt="" src="/iconelement3.svg" />
+                            <div className={styles.div1}>나의 정보</div>
                         </div>
                     </Link>
                     <Link
@@ -202,8 +202,8 @@ const Grad3 = () => {
                         style={{ textDecoration: "none", color: "var(--text-10)" }}
                     >
                         <div className={styles.menu}>
-                            <img className={styles.iconcard} alt="" src="/iconcard.svg" />
-                            <div className={styles.div7}>동문 데이터 분석</div>
+                            <img className={styles.icon} alt="" src="/iconcard.svg" />
+                            <div className={styles.div1}>동문 데이터 분석</div>
                         </div>
                     </Link>
                     <Link
@@ -217,8 +217,8 @@ const Grad3 = () => {
                     >
                         <div className={styles.nodeContainer}>
                             <div className={styles.menu}>
-                                <img className={styles.iconcard} alt="" src="/icontransactionminus1.svg" />
-                                <b className={styles.qa}>{`Q&A`}</b>
+                                <img className={styles.icon} alt="" src="/icontransactionminus1.svg" />
+                                <b className={styles.div1}>{`Q&A`}</b>
                             </div>
                         </div>
                     </Link>
@@ -232,8 +232,8 @@ const Grad3 = () => {
                         style={{ textDecoration: "none", color: "var(--text-10)" }}
                     >
                         <div className={styles.menu3}>
-                            <img className={styles.iconcard} alt="" src="/iconactivity1.svg" />
-                            <div className={styles.div7}>토큰 환전</div>
+                            <img className={styles.icon} alt="" src="/iconactivity1.svg" />
+                            <div className={styles.div1}>토큰 환전</div>
                         </div>
                     </Link>
                 </div>
@@ -241,10 +241,9 @@ const Grad3 = () => {
                     <img className={styles.icon} alt="" src="/icon.svg" />
                     <div className={styles.avatar} />
                     <div className={styles.adminA}>{walletInfo.walletAddress}</div>
-                    <img className={styles.iconcard} alt="" src="/iconarrowdown.svg" />
+                    <img className={styles.icon} alt="" src="/iconarrowdown.svg" />
                 </div>
             </div>
-            
         </div>
     );
 };

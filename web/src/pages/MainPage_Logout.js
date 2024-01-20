@@ -88,15 +88,20 @@ function MainPage_Logout() {
                     <img className={styles.bgIcon} alt="" src="/bg1@2x.png" />
                     <div className={styles.lH}>
                         <div className={styles.compButton1} onClick={notice}>
-                            <div className={styles.text1}>재학생</div>
-                        </div>
-                        <div className={styles.compButton1} onClick={notice}>
-                            <div className={styles.text1}>졸업생</div>
+                            <div className={styles.text1}>
+                                <p className={styles.p1}>재학생</p>
+                            </div>
                         </div>
                         <div className={styles.compButton1} onClick={notice}>
                             <div className={styles.text1}>
-                                <p className={styles.p}>재학생/졸업생</p>
-                                <p className={styles.p}>인증하기</p>
+                                <p className={styles.p1}>졸업생</p>
+                            </div>
+                        </div>
+                        <div className={styles.compButton1} onClick={notice}>
+                            <div className={styles.text1}>
+                                <p className={styles.p1}>
+                                    재학생/졸업생 <br /> 인증하기
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -129,7 +134,6 @@ function MainPage_Logout() {
                 <div>{walletAddress}</div>
                 <div>{currentBalance}</div>
             </div>
-            
         </div>
     );
 }

@@ -22,7 +22,7 @@ function QA() {
     }
 
     useEffect(() => {
-        Axios.get("http://localhost:8000/list", {})
+        Axios.get("http://ajoufe.synology.me:8000/list", {})
             .then((res) => {
                 setBoardList(res.data);
                 console.log(res.data);
@@ -369,7 +369,7 @@ function QA() {
                     >
                         <div className={styles.menu}>
                             <img className={styles.iconarrowDown} alt="" src="/iconelement3.svg" />
-                            <div className={styles.div}>나의 정보</div>
+                            <div className={styles.div1}>나의 정보</div>
                         </div>
                     </Link>
                     <Link
@@ -383,7 +383,7 @@ function QA() {
                     >
                         <div className={styles.menu}>
                             <img className={styles.iconarrowDown} alt="" src="/iconcard.svg" />
-                            <div className={styles.div}>동문 데이터 분석</div>
+                            <div className={styles.div1}>동문 데이터 분석</div>
                         </div>
                     </Link>
                     <Link
@@ -398,7 +398,7 @@ function QA() {
                         <div className={styles.menu2}>
                             <div className={styles.menu}>
                                 <img className={styles.iconarrowDown} alt="" src="/icontransactionminus.svg" />
-                                <b className={styles.qa1}>{`Q&A`}</b>
+                                <b className={styles.div1}>{`Q&A`}</b>
                             </div>
                         </div>
                     </Link>
@@ -413,7 +413,7 @@ function QA() {
                     >
                         <div className={styles.menu}>
                             <img className={styles.iconarrowDown} alt="" src="/iconactivity.svg" />
-                            <div className={styles.div}>토큰 환전</div>
+                            <div className={styles.div1}>토큰 환전</div>
                         </div>
                     </Link>
                 </div>
@@ -424,7 +424,6 @@ function QA() {
                     <img className={styles.iconarrowDown} alt="" src="/iconarrowdown.svg" />
                 </div>
             </div>
-            
         </div>
     );
 }

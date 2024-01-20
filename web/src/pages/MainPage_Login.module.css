@@ -1,3 +1,17 @@
+.div {
+    position: relative;
+    border-radius: var(--br-3xs);
+    background-color: var(--color-white);
+    border: 3px solid var(--color-cornflowerblue);
+    width: 100%;
+    height: 120vh;
+    overflow: hidden;
+    text-align: left;
+    font-size: var(--font-size-sm);
+    color: var(--color-dodgerblue-100);
+    font-family: var(--font-roboto);
+    overflow-x: auto;
+}
 .icIcon {
     position: relative;
     width: 27.78px;
@@ -133,10 +147,22 @@
     height: 90vh;
     object-fit: cover;
 }
-.text {
+
+.lH,
+.title {
+    position: absolute;
+}
+.lH {
     position: relative;
-    letter-spacing: -0.08em;
-    font-weight: 300;
+    top: 50vh; /* 이미 vh 단위이므로 변경하지 않습니다 */
+    left: 8vw; /* 이미 vw 단위이므로 변경하지 않습니다 */
+    width: 70.61vw; /* 1355.63px / 19.2px ≈ 70.61vw */
+    height: 18.42vh; /* 198.97px / 10.8px ≈ 18.42vh */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-41xl); /* 이 값은 vh 또는 vw로 변환할 수 없습니다 */
 }
 .compButton {
     border-radius: var(--br-3xs);
@@ -145,35 +171,19 @@
     backdrop-filter: blur(20px);
     border: 1px solid var(--color-white);
     box-sizing: border-box;
-    width: 25vw;
-    height: 30vh;
+    width: 20.93vw;
+    height: 20vh;
     display: flex;
     flex-direction: column;
     padding: var(--padding-xl);
     align-items: center;
     justify-content: center;
-}
-.p {
-    margin: 0;
-}
-.lH,
-.title {
-    position: absolute;
-}
-.lH {
-    top: 50vh;
-    left: 0vw;
-    width: 1355.63px;
-    height: 198.97px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: var(--gap-41xl);
+    font-size: var(--font-size-5xl);
 }
 .title {
     position: relative;
-    top: 18vh;
+    top: 2vh;
+    left: -1.3vw;
     font-size: var(--font-size-27xl);
     letter-spacing: -0.03em;
     line-height: 50px;
@@ -209,19 +219,6 @@
     color: var(--color-darkslategray-100);
     font-family: var(--font-spoqa-han-sans-neo);
 }
-.div {
-    position: relative;
-    border-radius: var(--br-3xs);
-    background-color: var(--color-white);
-    border: 3px solid var(--color-cornflowerblue);
-    width: 100%;
-    height: 120vh;
-    overflow: hidden;
-    text-align: left;
-    font-size: var(--font-size-sm);
-    color: var(--color-dodgerblue-100);
-    font-family: var(--font-roboto);
-}
 .footer {
     position: relative;
     top: 110vh;
@@ -234,4 +231,47 @@
     align-items: center;
     justify-content: center;
     gap: var(--gap-51xl);
+}
+.text {
+    position: relative;
+    letter-spacing: -0.08em;
+    font-weight: 300;
+}
+.p {
+    margin: 0;
+}
+.p1 {
+    margin: 0;
+    font-size: 2vw;
+    white-space: pre-wrap;
+}
+/* 미디어 쿼리 (반응형) */
+@media screen and (max-width: 1000px) {
+    .div {
+        height: 100vh; /* 높이를 변경합니다 */
+    }
+
+    .body {
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .title {
+        /* 화면 너비가 768px 이하일 때의 스타일 */
+        font-size: var(--font-size-16xl); /* font-size를 변경합니다 */
+        left: 3vw;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .text1 {
+        /* 화면 너비가 768px 이하일 때의 스타일 */
+        font-size: var(--font-size-16xl); /* font-size를 변경합니다 */
+    }
+}
+@media screen and (max-width: 1000px) {
+    .body1 {
+        /* 화면 너비가 768px 이하일 때의 스타일 */
+        top: -12vh;
+        left: -4vw;
+    }
 }

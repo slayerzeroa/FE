@@ -67,7 +67,7 @@ const Under1 = () => {
     const [GPA, setGPA] = useState([]);
     const [showChart, setShowChart] = useState(false);
     useEffect(() => {
-        Axios.get("http://localhost:8000/gpa", {})
+        Axios.get("http://ajoufe.synology.me:8000/gpa", {})
             .then((res) => {
                 setGPA(res);
                 console.log(res.data);
@@ -309,7 +309,7 @@ const Under1 = () => {
                         <div className={styles.menu2}>
                             <div className={styles.icontransactionMinusParent}>
                                 <img className={styles.iconarrowDown} alt="" src="/icontransactionminus1.svg" />
-                                <b className={styles.qa}>{`Q&A`}</b>
+                                <b className={styles.div1}>{`Q&A`}</b>
                             </div>
                         </div>
                     </Link>

@@ -9,6 +9,7 @@ import Select from "react-select";
 import CreatableSelect from "react-select/creatable";
 import prohibit from "../components/alarm/prohibit";
 import { Button } from "react-bootstrap";
+import Axios from "axios";
 
 const Grad1 = () => {
     const navigate = useNavigate();
@@ -145,6 +146,9 @@ const Grad1 = () => {
         }),
     };
 
+    // array none check
+    const check_none = (value) => value === "" || value === undefined || value === null;
+
     // submit event
     const submit = async () => {
         const data = {
@@ -156,20 +160,30 @@ const Grad1 = () => {
             task: task,
             company: company,
             year: year,
-            gpa: gpa,
-            club: club,
-            winning: winning,
-            certificate: certificate,
-            volunteer: volunteer,
+            // gpa: gpa,
+            // club: club,
+            // winning: winning,
+            // certificate: certificate,
+            // volunteer: volunteer,
         };
         console.log(data);
-        const res = await axios.post("http://localhost:3001/api/user", data);
+        const res = await Axios.post("http://ajoufe.synology.me:8000/submit", data);
+        const url = "http://ajoufe.synology.me:8000/submit";
 
-        if (res.data.success) {
-            alert("회원가입이 완료되었습니다.");
-            history.push("/login");
+        fetch(url, {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        }).then((res) => {
+            console.log("Request complete! response:", res);
+        });
+
+        if (Object.keys(data).some(check_none)) {
+            alert("데이터 저장이 완료되었습니다.");
         } else {
-            alert("회원가입에 실패하였습니다.");
+            alert("데이터 저장에 실패하였습니다 (모든 데이터를 입력해주세요)");
         }
     };
 
@@ -294,7 +308,9 @@ const Grad1 = () => {
                             </div>
                         </div>
                         <div className={styles.button}>
-                            <Button size="lg">저장하기</Button>
+                            <Button size="lg" onClick={submit}>
+                                저장하기
+                            </Button>
                         </div>
                     </div>
                 </div>
@@ -325,7 +341,7 @@ const Grad1 = () => {
                         style={{ textDecoration: "none", color: "var(--text-10)" }}
                     >
                         <div className={styles.menu}>
-                            <img className={styles.iconcard} alt="" src="/iconelement31.svg" />
+                            <img className={styles.icon} alt="" src="/iconelement31.svg" />
                             <div className={styles.div1}>나의 정보</div>
                         </div>
                     </Link>
@@ -339,7 +355,7 @@ const Grad1 = () => {
                         style={{ textDecoration: "none", color: "var(--text-10)" }}
                     >
                         <div className={styles.icontransactionMinusParent}>
-                            <img className={styles.iconcard} alt="" src="/iconcard.svg" />
+                            <img className={styles.icon} alt="" src="/iconcard.svg" />
                             <div className={styles.div1}>동문 데이터 분석</div>
                         </div>
                     </Link>
@@ -354,8 +370,8 @@ const Grad1 = () => {
                     >
                         <div className={styles.menu2}>
                             <div className={styles.icontransactionMinusParent}>
-                                <img className={styles.iconcard} alt="" src="/icontransactionminus1.svg" />
-                                <b className={styles.qa}>{`Q&A`}</b>
+                                <img className={styles.icon} alt="" src="/icontransactionminus1.svg" />
+                                <b className={styles.div1}>{`Q&A`}</b>
                             </div>
                         </div>
                     </Link>
@@ -369,7 +385,7 @@ const Grad1 = () => {
                         style={{ textDecoration: "none", color: "var(--text-10)" }}
                     >
                         <div className={styles.icontransactionMinusParent}>
-                            <img className={styles.iconcard} alt="" src="/iconactivity.svg" />
+                            <img className={styles.icon} alt="" src="/iconactivity.svg" />
                             <div className={styles.div1}>토큰 환전</div>
                         </div>
                     </Link>
@@ -381,7 +397,6 @@ const Grad1 = () => {
                     <img className={styles.iconcard} alt="" src="/iconarrowdown1.svg" />
                 </div>
             </div>
-            
         </div>
     );
 };

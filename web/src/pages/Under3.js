@@ -26,8 +26,8 @@ const Under3 = () => {
                     <img className={styles.iconarrowDown} alt="" src="/iconarrowdown4.svg" />
                 </div>
             </div>
-            <div className={styles.body}>
-                <div className={styles.body1}>
+            <div className={styles.bodyWrapper}>
+                <div className={styles.body}>
                     <div className={styles.compInput}>
                         <div className={styles.wrapper}>
                             <b className={styles.b}>활동 내역</b>
@@ -52,7 +52,7 @@ const Under3 = () => {
                         </div>
                         <div className={styles.listview1}>
                             <div className={styles.nodeContainer}>
-                                <div className={styles.node3}>
+                                <div className={styles.node1}>
                                     <div className={styles.myToken}>수익률</div>
                                 </div>
                             </div>
@@ -87,8 +87,8 @@ const Under3 = () => {
                         </div>
                         <div className={styles.listview1}>
                             <div className={styles.nodeContainer}>
-                                <div className={styles.node9}>
-                                    <div className={styles.myToken}>1 토큰당 이더리움</div>
+                                <div className={styles.node1}>
+                                    <div className={styles.myToken}>이더리움 교환비율</div>
                                 </div>
                             </div>
                             <div className={styles.nodeWrapper6}>
@@ -97,7 +97,7 @@ const Under3 = () => {
                         </div>
                         <div className={styles.listview1}>
                             <div className={styles.nodeContainer}>
-                                <div className={styles.node3}>
+                                <div className={styles.node1}>
                                     <div className={styles.myToken}>수수료</div>
                                 </div>
                             </div>
@@ -195,7 +195,7 @@ const Under3 = () => {
                     >
                         <div className={styles.menu}>
                             <img className={styles.iconarrowDown} alt="" src="/iconelement3.svg" />
-                            <div className={styles.div7}>졸업생 데이터 분석</div>
+                            <div className={styles.div1}>졸업생 데이터 분석</div>
                         </div>
                     </Link>
                     <Link
@@ -209,7 +209,7 @@ const Under3 = () => {
                     >
                         <div className={styles.menu}>
                             <img className={styles.iconarrowDown} alt="" src="/iconcard.svg" />
-                            <div className={styles.div7}>맞춤형 활동 추천</div>
+                            <div className={styles.div1}>맞춤형 활동 추천</div>
                         </div>
                     </Link>
                     <Link
@@ -224,7 +224,7 @@ const Under3 = () => {
                         <div className={styles.nodeContainer}>
                             <div className={styles.menu}>
                                 <img className={styles.iconarrowDown} alt="" src="/icontransactionminus1.svg" />
-                                <b className={styles.qa}>{`Q&A`}</b>
+                                <b className={styles.div1}>{`Q&A`}</b>
                             </div>
                         </div>
                     </Link>
@@ -239,7 +239,7 @@ const Under3 = () => {
                     >
                         <div className={styles.menu3}>
                             <img className={styles.iconarrowDown} alt="" src="/iconactivity1.svg" />
-                            <div className={styles.div7}>토큰 환전</div>
+                            <div className={styles.div1}>토큰 환전</div>
                         </div>
                     </Link>
                 </div>
@@ -250,7 +250,6 @@ const Under3 = () => {
                     <img className={styles.iconarrowDown} alt="" src="/iconarrowdown4.svg" />
                 </div>
             </div>
-            
         </div>
     );
 };

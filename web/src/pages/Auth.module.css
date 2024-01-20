@@ -48,6 +48,9 @@
     border-radius: var(--br-3xs);
     background-color: var(--color-ghostwhite-100);
     border: 1px solid var(--stroke);
+    display: flex;
+    justify-content: center; /* 가로 방향으로 가운데 정렬 */
+    align-items: center; /* 세로 방향으로 가운데 정렬 */
 }
 .bodyWrapper {
     position: absolute;
@@ -55,24 +58,56 @@
     left: 0;
     width: 100vw;
     height: 140vh;
-    display: flex;
     flex-direction: column;
     padding: var(--padding-61xl);
     box-sizing: border-box;
-    align-items: center;
-    justify-content: center;
+    display: flex;
+    justify-content: center; /* 가로 방향으로 가운데 정렬 */
+    align-items: center; /* 세로 방향으로 가운데 정렬 */
 }
 .bodyInner {
     position: relative;
-    top: 20vh;
-    left: 30vw;
+    top: -30vh;
     border: 1px solid var(--stroke);
     border-radius: var(--br-3xs);
     background-color: var(--color-white);
     width: 30vw;
     height: 37vh;
     display: flex;
+    justify-content: center; /* 가로 방향으로 가운데 정렬 */
+    align-items: center; /* 세로 방향으로 가운데 정렬 */
 }
+
+/* 화면의 너비가 1200px 이하일 때 적용되는 스타일 */
+@media (max-width: 1200px) {
+    .bodyInner {
+        position: relative;
+        border: 1px solid var(--stroke);
+        border-radius: var(--br-3xs);
+        background-color: var(--color-white);
+        width: 30vw;
+        height: 37vh;
+        display: flex;
+        justify-content: center; /* 가로 방향으로 가운데 정렬 */
+        align-items: center; /* 세로 방향으로 가운데 정렬 */
+    }
+}
+
+/* 화면의 너비가 1000px 이하일 때 적용되는 스타일 */
+@media (max-width: 1000px) {
+    .bodyInner {
+        position: relative;
+        border: 1px solid var(--stroke);
+        border-radius: var(--br-3xs);
+        background-color: var(--color-white);
+        width: 37vw;
+        height: 37vh;
+        display: flex;
+        justify-content: center; /* 가로 방향으로 가운데 정렬 */
+        align-items: center; /* 세로 방향으로 가운데 정렬 */
+    }
+}
+
 .icIcon {
     position: relative;
     width: 27.78px;
@@ -179,11 +214,112 @@
     align-items: center;
     justify-content: center;
     gap: var(--gap-11xl);
+    font-size: 14px;
+}
+/* 화면의 너비가 1200px 이하일 때 적용되는 스타일 */
+@media (max-width: 1300px) {
+    .innerText {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: var(--padding-61xl);
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: var(--gap-11xl);
+        font-size: 10px;
+    }
+}
+/* 화면의 너비가 1200px 이하일 때 적용되는 스타일 */
+@media (max-width: 1200px) {
+    .innerText {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: var(--padding-61xl);
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: var(--gap-11xl);
+        font-size: 9px;
+    }
+}
+
+/* 화면의 너비가 1000px 이하일 때 적용되는 스타일 */
+@media (max-width: 1000px) {
+    .innerText {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: var(--padding-61xl);
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: var(--gap-11xl);
+        font-size: 8px;
+    }
+}
+
+/* 화면의 너비가 700px 이하일 때 적용되는 스타일 */
+@media (max-width: 800px) {
+    .innerText {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: var(--padding-61xl);
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: var(--gap-11xl);
+        font-size: 7px;
+    }
 }
 .button {
     position: relative;
     top: 3vh;
+    left: -1vw;
     align-items: center;
     justify-content: center;
     text-align: center;
+    font-size: 10px;
+}
+.buttondiv {
+    font-size: 15px;
+}
+@media (max-width: 1300px) {
+    .buttondiv {
+        font-size: 12px;
+    }
+}
+@media (max-width: 1000px) {
+    .buttondiv {
+        font-size: 10px;
+    }
+}
+@media (max-width: 700px) {
+    .buttondiv {
+        font-size: 8px;
+    }
+}
+.div1 {
+    position: relative;
+    letter-spacing: -1px;
+    font-weight: 500;
+    font-size: 40px; /* 기본 폰트 크기 */
 }

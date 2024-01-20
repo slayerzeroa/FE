@@ -74,6 +74,7 @@ const Auth = () => {
                     <img className={styles.iconarrowDown} alt="" src="/iconarrowdown1.svg" />
                 </div>
             </div>
+
             <div className={styles.bodyWrapper}>
                 <div className={styles.body}>
                     <div className={styles.bodyInner}>
@@ -119,9 +120,11 @@ const Auth = () => {
                                         onChange={handleAllAgreedChange}
                                     />
                                     <label> 모두 동의합니다 </label>
-                                    <div className={styles.button} onClick={ischecked}>
-                                        <Button>확인</Button>
-                                    </div>
+                                </div>
+                                <div className={styles.button} onClick={ischecked}>
+                                    <Button className={styles.button}>
+                                        <div className={styles.buttondiv}>확인</div>
+                                    </Button>
                                 </div>
                             </ul>
                         </div>
