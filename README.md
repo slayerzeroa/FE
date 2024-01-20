@@ -6,6 +6,14 @@ FE
 ----- server
 ----- web
 
+# Remix 접속
+
+https://remix.ethereum.org/
+
+1. Remix 접속 후, 왼쪽 상단에 `Upload Folder` 클릭
+   ![Alt text](image.png)
+2. solidity 폴더 선택 후, `Open` 클릭
+
 # Solidity 파일 Deploy 순서
 
 1. IPFSStorage
