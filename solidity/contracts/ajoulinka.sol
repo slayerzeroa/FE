@@ -2,8 +2,8 @@
 pragma solidity ^0.8.20;
 
 //import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol";
-import ".deps/npm/@openzeppelin/contracts/token/ERC20/ERC20.sol";
-import  ".deps/contracts/IPFSStorage.sol";
+import "solidity/npm/@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import  "solidity/contracts/IPFSStorage.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 
  /**
