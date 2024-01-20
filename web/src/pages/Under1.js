@@ -67,7 +67,7 @@ const Under1 = () => {
     const [GPA, setGPA] = useState([]);
     const [showChart, setShowChart] = useState(false);
     useEffect(() => {
-        Axios.get("", {})
+        Axios.get("http://ajoufe.synology.me:8000/gpa", {})
             .then((res) => {
                 setGPA(res);
                 console.log(res.data);

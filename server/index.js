@@ -10,16 +10,23 @@ const app = express();
 // NAS db 설정
 // db environment 받아오기 (보안 위해 .env 폴더로 따로 관리)
 
-const fs = require("fs");
+// const fs = require("fs");
 
-const text = fs.readFileSync("/volume1/docker/ajoufe/FE_ENV.txt", "utf8");
-const db_env = text.split("\r\n");
+// const text = fs.readFileSync("/volume1/docker/ajoufe/FE_ENV.txt", "utf8");
+// const db_env = text.split("\r\n");
+
+// const db = mysql.createPool({
+//   host: db_env[0],
+//   user: db_env[1],
+//   password: db_env[2],
+//   database: db_env[3],
+// });
 
 const db = mysql.createPool({
-  host: db_env[0],
-  user: db_env[1],
-  password: db_env[2],
-  database: db_env[3],
+  host: "ajoufe.synology.me",
+  user: "Ajou",
+  password: "hS@bS86GHF3R.Jz]",
+  database: "linka",
 });
 
 app.use(

@@ -26,8 +26,8 @@ const Under3 = () => {
                     <img className={styles.iconarrowDown} alt="" src="/iconarrowdown4.svg" />
                 </div>
             </div>
-            <div className={styles.body}>
-                <div className={styles.body1}>
+            <div className={styles.bodyWrapper}>
+                <div className={styles.body}>
                     <div className={styles.compInput}>
                         <div className={styles.wrapper}>
                             <b className={styles.b}>활동 내역</b>
@@ -52,7 +52,7 @@ const Under3 = () => {
                         </div>
                         <div className={styles.listview1}>
                             <div className={styles.nodeContainer}>
-                                <div className={styles.node3}>
+                                <div className={styles.node1}>
                                     <div className={styles.myToken}>수익률</div>
                                 </div>
                             </div>
@@ -87,8 +87,8 @@ const Under3 = () => {
                         </div>
                         <div className={styles.listview1}>
                             <div className={styles.nodeContainer}>
-                                <div className={styles.node9}>
-                                    <div className={styles.myToken}>1 토큰당 이더리움</div>
+                                <div className={styles.node1}>
+                                    <div className={styles.myToken}>이더리움 교환비율</div>
                                 </div>
                             </div>
                             <div className={styles.nodeWrapper6}>
@@ -97,7 +97,7 @@ const Under3 = () => {
                         </div>
                         <div className={styles.listview1}>
                             <div className={styles.nodeContainer}>
-                                <div className={styles.node3}>
+                                <div className={styles.node1}>
                                     <div className={styles.myToken}>수수료</div>
                                 </div>
                             </div>

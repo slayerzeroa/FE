@@ -399,25 +399,34 @@
     box-sizing: border-box;
     justify-content: flex-end;
 }
-.body {
-    align-self: stretch;
-    flex: 1;
-    border-radius: var(--br-3xs);
-    background-color: var(--color-ghostwhite-100);
-    border: 1px solid var(--stroke);
-}
 .bodyWrapper {
     position: absolute;
     top: 10vh;
     left: 0;
     width: 100vw;
-    height: 90vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     padding: var(--padding-61xl);
     box-sizing: border-box;
     align-items: center;
     justify-content: center;
+    overflow: scroll; /* 스크롤바 추가 */
+}
+.body {
+    align-self: stretch;
+    flex: 1;
+    border-radius: var(--br-3xs);
+    background-color: var(--color-ghostwhite-100);
+    border: 1px solid var(--stroke);
+    flex-direction: row;
+    padding: var(--padding-11xl);
+    justify-content: flex-start;
+    gap: var(--gap-xl);
+    position: relative;
+    top: 12vh;
+    width: 100%;
+    height: 200vh;
 }
 .icIcon {
     position: relative;

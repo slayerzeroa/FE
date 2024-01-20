@@ -67,7 +67,7 @@
 }
 .nodeWrapper {
     position: relative;
-    width: 212px;
+    width: 240px;
     height: 20px;
 }
 .listview {
@@ -87,7 +87,7 @@
 }
 .node1 {
     position: relative;
-    width: 52px;
+    width: 60px;
     height: 20px;
 }
 .nodeContainer {
@@ -148,6 +148,7 @@
     letter-spacing: 0.01em;
     line-height: 20px;
     font-weight: 600;
+    font-size: small;
 }
 .node5,
 .nodeWrapper2 {
@@ -536,25 +537,34 @@
     box-sizing: border-box;
     justify-content: flex-end;
 }
-.body {
-    align-self: stretch;
-    flex: 1;
-    border-radius: var(--br-3xs);
-    background-color: var(--color-ghostwhite-100);
-    border: 1px solid var(--stroke);
-}
 .bodyWrapper {
     position: absolute;
     top: 10vh;
     left: 0;
     width: 100vw;
-    height: 90vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     padding: var(--padding-61xl);
     box-sizing: border-box;
     align-items: center;
     justify-content: center;
+    overflow: auto; /* 스크롤바 추가 */
+}
+.body {
+    align-self: stretch;
+    flex: 1;
+    border-radius: var(--br-3xs);
+    background-color: var(--color-ghostwhite-100);
+    border: 1px solid var(--stroke);
+    flex-direction: row;
+    padding: var(--padding-11xl);
+    justify-content: flex-start;
+    gap: var(--gap-xl);
+    position: relative;
+    top: 3vh;
+    width: 100%;
+    height: 130%;
 }
 .icIcon {
     position: relative;

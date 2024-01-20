@@ -329,17 +329,7 @@
     display: flex;
     align-items: center;
 }
-.body {
-    align-self: stretch;
-    flex: 1;
-    border-radius: var(--br-3xs);
-    background-color: var(--color-ghostwhite-100);
-    border: 1px solid var(--stroke);
-    flex-direction: row;
-    padding: var(--padding-11xl);
-    justify-content: flex-start;
-    gap: var(--gap-xl);
-}
+
 .bodyWrapper {
     position: absolute;
     top: 10vh;
@@ -461,7 +451,7 @@
 .valuePie {
     position: relative;
     border-radius: var(--br-base);
-    width: 33vw;
+    width: 25vw;
     height: 8vh;
     flex-shrink: 0;
     left: 10px;
@@ -475,7 +465,7 @@
     top: 10px;
     position: relative;
     border-radius: var(--br-base);
-    width: 40vw;
+    width: 30vw;
     height: 8vh;
     flex-shrink: 0;
 }
@@ -486,9 +476,9 @@
     overflow: hidden;
 }
 .tabcolumns {
-    position: absolute;
-    top: 17vh;
-    left: 39.85vw;
+    position: relative;
+    top: 0vh;
+    left: 3vw;
     width: 100%;
     height: 100%;
     display: flex;
@@ -555,13 +545,7 @@
     box-sizing: border-box;
     justify-content: flex-end;
 }
-.body {
-    align-self: stretch;
-    flex: 1;
-    border-radius: var(--br-3xs);
-    background-color: var(--color-ghostwhite-100);
-    border: 1px solid var(--stroke);
-}
+
 .bodyWrapper {
     position: absolute;
     top: 10vh;
@@ -764,26 +748,36 @@
     box-sizing: border-box;
     justify-content: flex-end;
 }
-.body {
-    align-self: stretch;
-    flex: 1;
-    border-radius: var(--br-3xs);
-    background-color: var(--color-ghostwhite-100);
-    border: 1px solid var(--stroke);
-}
 .bodyWrapper {
     position: absolute;
     top: 10vh;
     left: 0;
     width: 100vw;
-    height: 90vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     padding: var(--padding-61xl);
     box-sizing: border-box;
     align-items: center;
     justify-content: center;
+    overflow: auto; /* 스크롤바 추가 */
 }
+.body {
+    align-self: stretch;
+    flex: 1;
+    border-radius: var(--br-3xs);
+    background-color: var(--color-ghostwhite-100);
+    border: 1px solid var(--stroke);
+    flex-direction: row;
+    padding: var(--padding-11xl);
+    justify-content: flex-start;
+    gap: var(--gap-xl);
+    position: relative;
+    top: 3vh;
+    width: 100%;
+    height: 130%;
+}
+
 .icIcon {
     position: relative;
     width: 27.78px;
