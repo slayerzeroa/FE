@@ -6,10 +6,55 @@ import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import prohibit from "../components/alarm/prohibit";
+import Web3 from "web3";
+import abi_data from "../AJOU_ABI.js";
+
+// Sepolia 테스트넷의 RPC URL을 입력하세요.
+const RPC_URL = "https://sepolia.infura.io/v3/cda27962c6944a918c950d9d82b425b4";
+const web3 = new Web3(new Web3.providers.HttpProvider(RPC_URL));
 
 const Under3 = () => {
     const location = useLocation();
     const walletInfo = { ...location.state };
+
+    // 잔액을 저장할 상태를 생성합니다.
+    const [eth_balance, setethBalance] = useState(0);
+    const [aj_balance, setajBalance] = useState(0);
+
+    useEffect(() => {
+        // walletInfo가 유효한지 확인합니다.
+        if (walletInfo && walletInfo.walletAddress) {
+            // 잔액을 가져옵니다.
+            web3.eth
+                .getBalance(walletInfo.walletAddress)
+                .then((eth_balance) => {
+                    // 잔액을 이더 단위로 변환하고 상태를 업데이트합니다.
+                    setethBalance(web3.utils.fromWei(eth_balance, "ether"));
+                })
+                .catch((error) => {
+                    console.error("An error occurred:", error);
+                });
+        }
+    }, [walletInfo]);
+
+    useEffect(() => {
+        // walletInfo가 유효한지 확인합니다.
+        if (walletInfo && walletInfo.walletAddress) {
+            // 잔액을 가져옵니다.
+            const contractAddress = "0x21AB9f7E7Af99bCE71D8B885D84c8df7F0DEf342";
+            const contract = new web3.eth.Contract(abi_data, contractAddress);
+            contract.methods
+                .balanceOf(walletInfo.walletAddress)
+                .call()
+                .then((aj_balance) => {
+                    setajBalance(aj_balance);
+                    console.log(Number(aj_balance) / 1000000000000000000000);
+                })
+                .catch((error) => {
+                    console.error("An error occurred:", error);
+                });
+        }
+    }, [walletInfo]);
 
     // length가 0이면 undefined
     if (Object.keys(walletInfo).length === 0) {
@@ -47,7 +92,7 @@ const Under3 = () => {
                                 </div>
                             </div>
                             <div className={styles.nodeFrame}>
-                                <div className={styles.node}>89,8333</div>
+                                <div className={styles.node}>89,833</div>
                             </div>
                         </div>
                         <div className={styles.listview1}>
@@ -72,27 +117,27 @@ const Under3 = () => {
                                 </div>
                             </div>
                             <div className={styles.nodeWrapper2}>
-                                <div className={styles.node}>Token 0,0101626</div>
-                            </div>
-                        </div>
-                        <div className={styles.listview1}>
-                            <div className={styles.nodeContainer}>
-                                <div className={styles.node7}>
-                                    <div className={styles.myToken}>My ETH</div>
-                                </div>
-                            </div>
-                            <div className={styles.nodeWrapper4}>
-                                <div className={styles.node}>ETH 0,01283</div>
+                                <div className={styles.node}>{Number(aj_balance) / 1000000000000000000000}</div>
                             </div>
                         </div>
                         <div className={styles.listview1}>
                             <div className={styles.nodeContainer}>
                                 <div className={styles.node1}>
-                                    <div className={styles.myToken}>이더리움 교환비율</div>
+                                    <div className={styles.myToken}>My ETH</div>
                                 </div>
                             </div>
-                            <div className={styles.nodeWrapper6}>
-                                <div className={styles.node}>0.8444 ETH</div>
+                            <div className={styles.nodeWrapper4}>
+                                <div className={styles.node}>{Math.floor(eth_balance * 10000) / 10000}</div>
+                            </div>
+                        </div>
+                        <div className={styles.listview1}>
+                            <div className={styles.nodeContainer}>
+                                <div className={styles.node1}>
+                                    <div className={styles.myToken}>토큰 당 이더리움</div>
+                                </div>
+                            </div>
+                            <div className={styles.nodeWrapper4}>
+                                <div className={styles.node}>0.0005 ETH</div>
                             </div>
                         </div>
                         <div className={styles.listview1}>
@@ -101,8 +146,8 @@ const Under3 = () => {
                                     <div className={styles.myToken}>수수료</div>
                                 </div>
                             </div>
-                            <div className={styles.nodeWrapper8}>
-                                <div className={styles.node}>0.111 ETH</div>
+                            <div className={styles.nodeWrapper4}>
+                                <div className={styles.node}>0.0021 ETH</div>
                             </div>
                         </div>
                         <div className={styles.divider} />
