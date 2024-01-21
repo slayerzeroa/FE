@@ -9,6 +9,8 @@ import prohibit from "../components/alarm/prohibit";
 import { Button } from "react-bootstrap";
 import check_alarm from "../components/alarm/check_alarm";
 import auth_alarm from "../components/alarm/auth_alarm";
+import TermsModal from "../components/TermsModal"; // TermsModal 컴포넌트를 가져옵니다.
+import TermsOfUse from "../public/TermsOfUse"; // TermsModal 컴포넌트를 가져옵니다.
 
 const Auth = () => {
     // wallet props 받아오기
@@ -82,36 +84,29 @@ const Auth = () => {
                             <label> 회원정보 입력 및 이용약관 동의</label>
                             <ul>
                                 <div>
-                                    <input
-                                        type="checkbox"
-                                        name="termAgreed"
-                                        checked={agreements.termAgreed}
-                                        onChange={handleAgreementChange}
+                                    <TermsModal
+                                        title={TermsOfUse[0]["title"]}
+                                        content={TermsOfUse[0]["content"]}
+                                        isChecked={agreements.termAgreed}
                                     />
-                                    <label> [필수] 이용약관 동의</label>
                                 </div>
                                 <div>
-                                    <input
-                                        type="checkbox"
-                                        name="personallInfoAgreed"
-                                        checked={agreements.personallInfoAgreed}
-                                        onChange={handleAgreementChange}
+                                    <TermsModal
+                                        title={TermsOfUse[1]["title"]}
+                                        content={TermsOfUse[1]["content"]}
+                                        isChecked={agreements.termAgreed}
                                     />
-                                    <label> [필수] 개인정보 수집 및 이용 동의</label>
                                 </div>
                                 <div>
-                                    <input
-                                        type="checkbox"
-                                        name="provisionAgreed"
-                                        checked={agreements.provisionAgreed}
-                                        onChange={handleAgreementChange}
+                                    <TermsModal
+                                        title={TermsOfUse[2]["title"]}
+                                        content={TermsOfUse[2]["content"]}
+                                        isChecked={agreements.termAgreed}
                                     />
-                                    <label> [필수] 서비스 이용약관 동의</label>
                                 </div>
                                 <div>
                                     <label></label>
                                 </div>
-
                                 <div>
                                     <input
                                         type="checkbox"

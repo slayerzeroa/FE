@@ -7,7 +7,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import prohibit from "../components/alarm/prohibit";
 import Web3 from "web3";
-import abi_data from "../AJOU_ABI.js";
+import abi_data from "../public/AJOU_ABI.js";
 
 // Sepolia 테스트넷의 RPC URL을 입력하세요.
 const RPC_URL = "https://sepolia.infura.io/v3/cda27962c6944a918c950d9d82b425b4";
@@ -117,7 +117,7 @@ const Under3 = () => {
                                 </div>
                             </div>
                             <div className={styles.nodeWrapper2}>
-                                <div className={styles.node}>{Number(aj_balance) / 1000000000000000000000}</div>
+                                <div className={styles.node}>{Number(aj_balance)}</div>
                             </div>
                         </div>
                         <div className={styles.listview1}>
